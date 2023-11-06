@@ -7,7 +7,16 @@
 <meta name="twitter:image:src" content="https://skywalking.apache.org/images/skywalking_400x400.png">
 <meta property="og:image" content="https://skywalking.apache.org/images/skywalking_400x400.png">
 <meta name="generator" content="Hugo 0.80.0" />
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GR8N6PGRJ3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);};
+  gtag('js', new Date());gtag('config', 'G-GR8N6PGRJ3');
+</script>
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_3007530_pvozs1rz2wn.css">
 <link rel="alternate" type="application/rss&#43;xml" href="/zh/index.xml">
 
 
@@ -41,17 +50,16 @@ if (!doNotTrack) {
 }
 </script>
 <script async src='https://www.google-analytics.com/analytics.js'></script>
-<link rel="preload" href="/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-<link rel="preload" href="/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 
 
 
-<link rel="preload" href="/scss/main.min.885c391cdebcf622844f99ca0bb70bf355b491d5608699a1eeee73d49f1f768a.css" as="style">
-<link href="/scss/main.min.885c391cdebcf622844f99ca0bb70bf355b491d5608699a1eeee73d49f1f768a.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.5f0bb1a43baf0347677fa116245ad784e3caf2daded38edaca532d095825599b.css" as="style">
+<link href="/scss/main.min.5f0bb1a43baf0347677fa116245ad784e3caf2daded38edaca532d095825599b.css" rel="stylesheet" integrity="">
 
 
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
+<link rel="stylesheet" href="/css/docSearch.css" />
+
 
 <script src="/js/jquery-3.6.0.min.js"></script>
 
@@ -65,7 +73,9 @@ if (!doNotTrack) {
     <header>
       
 <nav class="js-navbar-scroll navbar navbar-expand  flex-column flex-md-row td-navbar">
-    <div class="sidebar-button"><svg width="40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div>
+    <div class="sidebar-button">
+      <i class="iconfont icon-menu"></i>
+    </div>
     <a class="navbar-brand" href="/">
         <span class="navbar-logo"><img width="130" src="/images/logo.svg" alt="SkyWalking"></span> 
     </a>
@@ -74,84 +84,94 @@ if (!doNotTrack) {
              
             
             
-            <li class="nav-item mr-3 mb-2 mb-lg-0">
+            <li class="nav-item mr-3 mb-lg-0">
 				
 				
 				
 				
 				<a class="nav-link" href="/docs" ><span>Projects and Docs</span></a>
 			</li>
-             
             
             
-            <li class="nav-item mr-3 mb-2 mb-lg-0">
+            
+            
+            <li class="nav-item mr-3 mb-lg-0">
 				
 				
 				
 				
 				<a class="nav-link" href="/events" ><span>Events</span></a>
 			</li>
-             
             
             
-            <li class="nav-item mr-3 mb-2 mb-lg-0">
+            
+            
+            <li class="nav-item mr-3 mb-lg-0">
 				
 				
 				
 				
 				<a class="nav-link" href="/blog" ><span>Blogs</span></a>
 			</li>
-             
             
             
-            <li class="nav-item mr-3 mb-2 mb-lg-0">
+            
+            
+            <li class="nav-item mr-3 mb-lg-0">
 				
 				
 				
 				
 				<a class="nav-link" href="/downloads" ><span>Downloads</span></a>
 			</li>
-             
             
             
-            <li class="nav-item mr-3 mb-2 mb-lg-0">
+            
+            
+            <li class="nav-item mr-3 mb-lg-0">
 				
 				
 				
 				
 				<a class="nav-link" href="/team" ><span>Team</span></a>
 			</li>
-             
             
             
-            <li class="nav-item mr-3 mb-2 mb-lg-0">
+            
+            
+            <li class="nav-item mr-3 mb-lg-0">
 				
 				
 				
 				
 				<a class="nav-link" href="/users" ><span>Users</span></a>
 			</li>
-             
             
             
-            <li class="nav-item mr-3 mb-2 mb-lg-0">
-				
-				
-				
-				
-				<a class="nav-link" href="/zh" ><span>中文博客</span></a>
-			</li>
-             
             
-             
+            
+            
+            <li class="nav-item mr-3 mb-lg-0">
+                <span class="link dropdown blog">
+                    <a class="link-name nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">中文资料</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="/zh/">博客</a>
+                        <a class="dropdown-item" href="https://space.bilibili.com/390683219" target="_blank" rel="noopener noreferrer">
+                            B站
+                        </a>
+                        <a class="dropdown-item" href="https://juejin.cn/user/13673577331607" target="_blank" rel="noopener noreferrer">
+                            掘金
+                        </a>
+                    </div>
+                </span>
+            </li>
+
             
 			
         </ul>
     </div>
     <div class="navbar-nav d-none d-lg-block search-input-box">
          
-            
-        
             
         
             
@@ -181,12 +201,14 @@ if (!doNotTrack) {
                     <a class="dropdown-item" href="http://www.apache.org/security/">Security</a> 
                     <a class="dropdown-item" href="http://www.apache.org/foundation/sponsorship.html">Sponsor and Donate</a> 
                     <a class="dropdown-item" href="http://www.apache.org/foundation/thanks.html">Thanks</a> 
+                    <a class="dropdown-item" href="https://apache.org/foundation/policies/privacy.html">Privacy</a> 
                 </div>
             </span>
             
         
         
-<input id="algolia-search-input" type="search" class="form-control td-search-input" placeholder="&#xf002 Search…" aria-label="Search…" autocomplete="off">
+<div id="docsearch"></div>
+
 
     </div>
 </nav>
@@ -206,13 +228,13 @@ if (!doNotTrack) {
 <div class="row">
 	<div class="col-12">
 		
-		<h2>Posts in 2020</h2>
+		<h2>Posts in 2022</h2>
 		<ul class="list-unstyled mt-4">
 			
 			<li class="media mb-4">
 				<div class="media-body">
-					<h5 class="mt-0 mb-1"><a href="/zh/2020-04-28-skywalking-and-mosn/">SkyWalking 支持云原生网络代理 MOSN 做分布式追踪</a></h5>
-					<p class="mb-2 mb-md-3"><small class="text-muted">Tuesday, April 28, 2020 in 博客</small></p>
+					<h5 class="mt-0 mb-1"><a href="/zh/2022-05-08-apache-shenyuincubating-integrated-skywalking-practice-observability/">Apache ShenYu (incubating)插件实现原理和可观测性实践</a></h5>
+					<p class="mb-2 mb-md-3"><small class="text-muted">Sunday, May 08, 2022 in 博客</small></p>
 					
 
 
@@ -220,15 +242,15 @@ if (!doNotTrack) {
 
 
                     
-					<p class="pt-0 mt-0">日前，观察性分析平台和应用性能管理系统 SkyWalking 完成了与云原生网络代理 MOSN 的集成，作为 MOSN 中的支持的分布式追踪系统之一，旨在实现在微服务和 Service Mesh 中的更强大的可观察性。</p>
-					<p class="pt-0"><a href="/zh/2020-04-28-skywalking-and-mosn/">Read more</a></p>
+					<p class="pt-0 mt-0">本文介绍Apache ShenYu (incubating)插件实现原理和ShenYu网关的可观测性实践</p>
+					<p class="pt-0"><a href="/zh/2022-05-08-apache-shenyuincubating-integrated-skywalking-practice-observability/">Read more</a></p>
 				</div>
 			</li>
 			
 			<li class="media mb-4">
 				<div class="media-body">
-					<h5 class="mt-0 mb-1"><a href="/zh/2020-04-19-skywalking-quick-start/">SkyWalking 极简入门</a></h5>
-					<p class="mb-2 mb-md-3"><small class="text-muted">Sunday, April 19, 2020 in 博客</small></p>
+					<h5 class="mt-0 mb-1"><a href="/zh/2022-04-19-how-to-use-the-java-agent-injector/">如何使用java探针注入器?</a></h5>
+					<p class="mb-2 mb-md-3"><small class="text-muted">Tuesday, April 19, 2022 in 博客</small></p>
 					
 
 
@@ -236,15 +258,15 @@ if (!doNotTrack) {
 
 
                     
-					<p class="pt-0 mt-0">从 0 开始入门 SkyWalking，搭建 SkyWalking 服务，并接入 Java 项目中实现分布式链路追踪。</p>
-					<p class="pt-0"><a href="/zh/2020-04-19-skywalking-quick-start/">Read more</a></p>
+					<p class="pt-0 mt-0">本文介绍如何快速入手基于SWCK的java探针注入器。</p>
+					<p class="pt-0"><a href="/zh/2022-04-19-how-to-use-the-java-agent-injector/">Read more</a></p>
 				</div>
 			</li>
 			
 			<li class="media mb-4">
 				<div class="media-body">
-					<h5 class="mt-0 mb-1"><a href="/zh/2020-03-23-using-profiling-to-fix-the-blind-spot-of-distributed-tracing/">在线代码级性能剖析，补全分布式追踪的最后一块“短板”</a></h5>
-					<p class="mb-2 mb-md-3"><small class="text-muted">Monday, March 23, 2020 in 博客</small></p>
+					<h5 class="mt-0 mb-1"><a href="/zh/2022-04-18-meeting/">Apache SkyWalking 2022 峰会</a></h5>
+					<p class="mb-2 mb-md-3"><small class="text-muted">Monday, April 18, 2022 in 博客</small></p>
 					
 
 
@@ -252,20 +274,100 @@ if (!doNotTrack) {
 
 
                     
-					<p class="pt-0 mt-0">在本文中，我们详细介绍了代码级的性能剖析方法，以及我们在 Apache SkyWalking 中的实践。希望能够帮助大家在线定位系统性能短板，缓解系统压力。</p>
-					<p class="pt-0"><a href="/zh/2020-03-23-using-profiling-to-fix-the-blind-spot-of-distributed-tracing/">Read more</a></p>
+					<p class="pt-0 mt-0">CSDN云原生系列在线峰会第4期，特邀SkyWalking创始人、Apache基金会首位中国董事、Tetrate创始工程师吴晟担任出品人，推出SkyWalking峰会。</p>
+					<p class="pt-0"><a href="/zh/2022-04-18-meeting/">Read more</a></p>
+				</div>
+			</li>
+			
+			<li class="media mb-4">
+				<div class="media-body">
+					<h5 class="mt-0 mb-1"><a href="/zh/2022-04-14-integrating-skywalking-with-source-code/">将 Apache SkyWalking 与源代码集成</a></h5>
+					<p class="mb-2 mb-md-3"><small class="text-muted">Thursday, April 14, 2022 in 博客</small></p>
+					
+
+
+
+
+
+                    
+					<p class="pt-0 mt-0">在本文中，我们将介绍开源实时编码平台 Source&#43;&#43; 中的一个新概念, 其旨在让开发人员更直观地监控生产环境中的应用。</p>
+					<p class="pt-0"><a href="/zh/2022-04-14-integrating-skywalking-with-source-code/">Read more</a></p>
+				</div>
+			</li>
+			
+			<li class="media mb-4">
+				<div class="media-body">
+					<h5 class="mt-0 mb-1"><a href="/zh/2022-04-13-skywalking-in-autonomous-driving/">SkyWalking 在无人驾驶领域的实践</a></h5>
+					<p class="mb-2 mb-md-3"><small class="text-muted">Wednesday, April 13, 2022 in 博客</small></p>
+					
+
+
+
+
+
+                    
+					<p class="pt-0 mt-0">本文由此前于 KubeSphere 直播上的分享整理而成，主要介绍 SkyWalking 的基本概念和使用方法，以及在无人驾驶领域的一系列实践。</p>
+					<p class="pt-0"><a href="/zh/2022-04-13-skywalking-in-autonomous-driving/">Read more</a></p>
+				</div>
+			</li>
+			
+			<li class="media mb-4">
+				<div class="media-body">
+					<h5 class="mt-0 mb-1"><a href="/zh/2022-03-25-skywalking-source-code-analyzation/">[视频] SkyWalking 8.7.0 源码分析</a></h5>
+					<p class="mb-2 mb-md-3"><small class="text-muted">Friday, March 25, 2022 in 博客</small></p>
+					
+
+
+
+
+
+                    
+					<p class="pt-0 mt-0">SkyWalking 的美妙不仅在于其强大的功能，还在于其优秀的代码实现。</p>
+					<p class="pt-0"><a href="/zh/2022-03-25-skywalking-source-code-analyzation/">Read more</a></p>
+				</div>
+			</li>
+			
+			<li class="media mb-4">
+				<div class="media-body">
+					<h5 class="mt-0 mb-1"><a href="/zh/2022-03-14-the-apache-community/">我眼中的 The Apache Way</a></h5>
+					<p class="mb-2 mb-md-3"><small class="text-muted">Sunday, March 13, 2022 in 博客</small></p>
+					
+
+
+
+
+
+                    
+					<p class="pt-0 mt-0">Apache Community 当中以人为本，极致宽容和着眼技术的理念非常有吸引力。我做得很开心，期待你也加入。</p>
+					<p class="pt-0"><a href="/zh/2022-03-14-the-apache-community/">Read more</a></p>
+				</div>
+			</li>
+			
+			<li class="media mb-4">
+				<div class="media-body">
+					<h5 class="mt-0 mb-1"><a href="/zh/2022-01-18-cyborg-flow/">Cyborg Flow X SkyWalking: 生产环境全链路压测</a></h5>
+					<p class="mb-2 mb-md-3"><small class="text-muted">Tuesday, January 18, 2022 in 博客</small></p>
+					
+
+
+
+
+
+                    
+					<p class="pt-0 mt-0">如何将SkyWalking与Cyborg Flow相结合来完成生产环境中的全链路压测。</p>
+					<p class="pt-0"><a href="/zh/2022-01-18-cyborg-flow/">Read more</a></p>
 				</div>
 			</li>
 			
 		</ul>
 		
-		<h2>Posts in 2019</h2>
+		<h2>Posts in 2021</h2>
 		<ul class="list-unstyled mt-4">
 			
 			<li class="media mb-4">
 				<div class="media-body">
-					<h5 class="mt-0 mb-1"><a href="/zh/2019-11-07-skywalking-elasticsearch-storage-optimization/">SkyWalking 使用 ElasticSearch 存储的优化</a></h5>
-					<p class="mb-2 mb-md-3"><small class="text-muted">Thursday, November 07, 2019 in 博客</small></p>
+					<h5 class="mt-0 mb-1"><a href="/zh/2021-11-29-better-observability-for-chaos-engineering/">Chaos Mesh X SkyWalking: 可观测的混沌工程</a></h5>
+					<p class="mb-2 mb-md-3"><small class="text-muted">Monday, November 29, 2021 in 博客</small></p>
 					
 
 
@@ -273,15 +375,15 @@ if (!doNotTrack) {
 
 
                     
-					<p class="pt-0 mt-0">SkyWalking 使用 ElasticSearch 存储的优化。</p>
-					<p class="pt-0"><a href="/zh/2019-11-07-skywalking-elasticsearch-storage-optimization/">Read more</a></p>
+					<p class="pt-0 mt-0">本教程将分享如何通过将 SkyWalking 和 Chaos Mesh 结合，运用 Event 信息监控，实时了解混沌实验对应用服务性能造成的影响。</p>
+					<p class="pt-0"><a href="/zh/2021-11-29-better-observability-for-chaos-engineering/">Read more</a></p>
 				</div>
 			</li>
 			
 			<li class="media mb-4">
 				<div class="media-body">
-					<h5 class="mt-0 mb-1"><a href="/zh/2019-10-08-how-to-use-sw-chart/">使用 chart 部署 SkyWalking</a></h5>
-					<p class="mb-2 mb-md-3"><small class="text-muted">Tuesday, October 08, 2019 in 博客</small></p>
+					<h5 class="mt-0 mb-1"><a href="/zh/skywalking-day-2021/">[视频] SkyWalking Day 2021 演讲视频</a></h5>
+					<p class="mb-2 mb-md-3"><small class="text-muted">Tuesday, July 06, 2021 in 博客</small></p>
 					
 
 
@@ -289,88 +391,8 @@ if (!doNotTrack) {
 
 
                     
-					<p class="pt-0 mt-0">本文主要讲述的是如何使用 Helm Charts  将 SkyWalking 部署到 Kubernetes 集群中。</p>
-					<p class="pt-0"><a href="/zh/2019-10-08-how-to-use-sw-chart/">Read more</a></p>
-				</div>
-			</li>
-			
-			<li class="media mb-4">
-				<div class="media-body">
-					<h5 class="mt-0 mb-1"><a href="/zh/2019-09-12-apache-skywalking-committer-apply-process/">Apache SkyWalking Committer申请流程</a></h5>
-					<p class="mb-2 mb-md-3"><small class="text-muted">Thursday, September 12, 2019 in 博客</small></p>
-					
-
-
-
-
-
-                    
-					<p class="pt-0 mt-0">本文介绍申请Apache SkyWalking Committer流程。</p>
-					<p class="pt-0"><a href="/zh/2019-09-12-apache-skywalking-committer-apply-process/">Read more</a></p>
-				</div>
-			</li>
-			
-			<li class="media mb-4">
-				<div class="media-body">
-					<h5 class="mt-0 mb-1"><a href="/zh/2019-08-30-how-to-use-skywalking-agent/">如何使用 SkyWalking Agent ？</a></h5>
-					<p class="mb-2 mb-md-3"><small class="text-muted">Friday, August 30, 2019 in 博客</small></p>
-					
-
-
-
-
-
-                    
-					<p class="pt-0 mt-0">本文将教你如何在 docker 或者 kubernetes 使用Skywalking Agent。</p>
-					<p class="pt-0"><a href="/zh/2019-08-30-how-to-use-skywalking-agent/">Read more</a></p>
-				</div>
-			</li>
-			
-			<li class="media mb-4">
-				<div class="media-body">
-					<h5 class="mt-0 mb-1"><a href="/zh/2019-03-29-introduction-of-skywalking-and-simple-practice/">SkyWalking调研与初步实践</a></h5>
-					<p class="mb-2 mb-md-3"><small class="text-muted">Saturday, March 23, 2019 in 博客</small></p>
-					
-
-
-
-
-
-                    
-					<p class="pt-0 mt-0">在为公司进行调用链跟踪系统进行技术选型的过程中，详细的了解了一下Skywalking，同时也进行了初步的实践，给其他同样在了解Skywalking的同学提供一些参考。</p>
-					<p class="pt-0"><a href="/zh/2019-03-29-introduction-of-skywalking-and-simple-practice/">Read more</a></p>
-				</div>
-			</li>
-			
-			<li class="media mb-4">
-				<div class="media-body">
-					<h5 class="mt-0 mb-1"><a href="/zh/2019-03-01-skywalking-troubleshoot/">SkyWalking线上问题排查定位</a></h5>
-					<p class="mb-2 mb-md-3"><small class="text-muted">Friday, March 01, 2019 in 博客</small></p>
-					
-
-
-
-
-
-                    
-					<p class="pt-0 mt-0">本文将我们线上使用skywalking时遇到的常见的问题做一个分析和解决，希望给社区更多的其他的新老用户做个参考...</p>
-					<p class="pt-0"><a href="/zh/2019-03-01-skywalking-troubleshoot/">Read more</a></p>
-				</div>
-			</li>
-			
-			<li class="media mb-4">
-				<div class="media-body">
-					<h5 class="mt-0 mb-1"><a href="/zh/2019-02-24-skywalking-pk-pinpoint/">APM巅峰对决：SkyWalking P.K. Pinpoint</a></h5>
-					<p class="mb-2 mb-md-3"><small class="text-muted">Sunday, February 24, 2019 in 博客</small></p>
-					
-
-
-
-
-
-                    
-					<p class="pt-0 mt-0">这应该是目前两款最优秀的开源APM软件：skywalking和Pinpoint，本文基于它们截止2019年2月最新的版本，进行最全方位的对比。看看到底谁能更胜一筹...</p>
-					<p class="pt-0"><a href="/zh/2019-02-24-skywalking-pk-pinpoint/">Read more</a></p>
+					<p class="pt-0 mt-0">SkyWalking Day 2021 讲师视频，请到 B 站观看。</p>
+					<p class="pt-0"><a href="/zh/skywalking-day-2021/">Read more</a></p>
 				</div>
 			</li>
 			
@@ -400,11 +422,17 @@ if (!doNotTrack) {
   <li class="page-item">
     <a class="page-link" href="/zh/page/4/">4</a>
   </li>
+  <li class="page-item disabled">
+    <span aria-hidden="true">&nbsp;&hellip;&nbsp;</span>
+  </li>
+  <li class="page-item">
+    <a class="page-link" href="/zh/page/7/">7</a>
+  </li>
   <li class="page-item">
     <a href="/zh/page/4/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
   </li>
   <li class="page-item">
-    <a href="/zh/page/4/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+    <a href="/zh/page/7/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
   </li>
 </ul>
 
@@ -416,7 +444,7 @@ if (!doNotTrack) {
           <div class="toc d-none d-xl-block d-md-none col-xl-2 td-toc d-print-none">
             <div class="tags-wrapper">
     <div class="font-weight-bold post-meta ">
-        <i class="fas fa-tags pr-1" aria-hidden="true"></i>
+        <i class="iconfont icon-tags pr-1" aria-hidden="true"></i>
         Tags
     </div>
     <ul class="tags-box">
@@ -427,8 +455,18 @@ if (!doNotTrack) {
         </li>
         
         <li>
+            <a href="/zh_tags/apache-shenyu-incubating/" class="tag-link">Apache ShenYu (incubating)</a>
+            <span class="count">1</span>
+        </li>
+        
+        <li>
             <a href="/zh_tags/conference/" class="tag-link">Conference</a>
-            <span class="count">6</span>
+            <span class="count">8</span>
+        </li>
+        
+        <li>
+            <a href="/zh_tags/course/" class="tag-link">Course</a>
+            <span class="count">1</span>
         </li>
         
         <li>
@@ -438,6 +476,11 @@ if (!doNotTrack) {
         
         <li>
             <a href="/zh_tags/dotnetcore/" class="tag-link">DotNetCore</a>
+            <span class="count">1</span>
+        </li>
+        
+        <li>
+            <a href="/zh_tags/ebpf/" class="tag-link">eBPF</a>
             <span class="count">1</span>
         </li>
         
@@ -452,6 +495,21 @@ if (!doNotTrack) {
         </li>
         
         <li>
+            <a href="/zh_tags/logging/" class="tag-link">Logging</a>
+            <span class="count">1</span>
+        </li>
+        
+        <li>
+            <a href="/zh_tags/metrics/" class="tag-link">Metrics</a>
+            <span class="count">1</span>
+        </li>
+        
+        <li>
+            <a href="/zh_tags/observability/" class="tag-link">Observability</a>
+            <span class="count">1</span>
+        </li>
+        
+        <li>
             <a href="/zh_tags/open-source-contribution/" class="tag-link">Open Source Contribution</a>
             <span class="count">4</span>
         </li>
@@ -459,6 +517,11 @@ if (!doNotTrack) {
         <li>
             <a href="/zh_tags/open-source-promotion-plan/" class="tag-link">Open Source Promotion Plan</a>
             <span class="count">2</span>
+        </li>
+        
+        <li>
+            <a href="/zh_tags/performance/" class="tag-link">Performance</a>
+            <span class="count">1</span>
         </li>
         
         <li>
@@ -477,13 +540,28 @@ if (!doNotTrack) {
         </li>
         
         <li>
+            <a href="/zh_tags/shardingsphere/" class="tag-link">ShardingSphere</a>
+            <span class="count">1</span>
+        </li>
+        
+        <li>
+            <a href="/zh_tags/shardingsphere-proxy/" class="tag-link">ShardingSphere-proxy</a>
+            <span class="count">1</span>
+        </li>
+        
+        <li>
+            <a href="/zh_tags/skywalking/" class="tag-link">SkyWalking</a>
+            <span class="count">1</span>
+        </li>
+        
+        <li>
             <a href="/zh_tags/source-code/" class="tag-link">Source Code</a>
             <span class="count">1</span>
         </li>
         
         <li>
             <a href="/zh_tags/tracing/" class="tag-link">Tracing</a>
-            <span class="count">2</span>
+            <span class="count">3</span>
         </li>
         
         <li>
@@ -493,21 +571,16 @@ if (!doNotTrack) {
         
         <li>
             <a href="/zh_tags/user-manual/" class="tag-link">User Manual</a>
-            <span class="count">15</span>
+            <span class="count">16</span>
         </li>
         
         <li>
             <a href="/zh_tags/video/" class="tag-link">Video</a>
-            <span class="count">7</span>
+            <span class="count">10</span>
         </li>
         
         <li>
             <a href="/zh_tags/web-ui/" class="tag-link">Web UI</a>
-            <span class="count">1</span>
-        </li>
-        
-        <li>
-            <a href="/zh_tags/%E6%80%A7%E8%83%BD/" class="tag-link">性能</a>
             <span class="count">1</span>
         </li>
         
@@ -608,25 +681,25 @@ if (!doNotTrack) {
   
   <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Twitter" aria-label="Twitter">
     <a class="text-color" target="_blank" href="https://twitter.com/asfskywalking">
-      <i class="fab fa-twitter"></i>
+      <i class="iconfont icon-twitter"></i>
     </a>
   </li>
   
   <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Slack" aria-label="Slack">
     <a class="text-color" target="_blank" href="http://s.apache.org/slack-invite">
-      <i class="fab fa-slack"></i>
+      <i class="iconfont icon-slack"></i>
     </a>
   </li>
   
   <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Mailing list" aria-label="Mailing list">
     <a class="text-color" target="_blank" href="https://lists.apache.org/list.html?dev@skywalking.apache.org">
-      <i class="fa fa-envelope"></i>
+      <i class="iconfont icon-email"></i>
     </a>
   </li>
   
   <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="GitHub" aria-label="GitHub">
     <a class="text-color" target="_blank" href="https://github.com/apache/skywalking">
-      <i class="fab fa-github"></i>
+      <i class="iconfont icon-github"></i>
     </a>
   </li>
   
@@ -637,7 +710,7 @@ if (!doNotTrack) {
     </div>
     <div class="">
 
-        <small class="text-color">&copy; 2017 - 2022 The Apache Software Foundation All Rights Reserved</small>
+        <small class="text-color">&copy; 2017 - 2023 The Apache Software Foundation All Rights Reserved</small>
         
 	
     </div>
@@ -650,6 +723,1884 @@ if (!doNotTrack) {
 
     </div>
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3402,11 +5353,33 @@ if (!doNotTrack) {
         <div class="nav-item"><a href="/downloads/" class="nav-link">Downloads</a></div>
         <div class="nav-item"><a href="/team/" class="nav-link">Team</a></div>
         <div class="nav-item"><a href="/users/" class="nav-link">Users</a></div>
-        <div class="nav-item"><a href="/zh/" class="nav-link">中文博客</a></div>
         <div class="nav-item">
-            <div class="dropdown-wrapper open"><a class="dropdown-title"><span>Links</span> <span
-                    class="arrow down"></span></a>
-                <ul class="nav-dropdown" style="">
+            <div class="dropdown-wrapper open">
+                <a class="dropdown-title"><span>中文资料</span>
+                    <span class="arrow down"></span>
+                </a>
+                <ul class="nav-dropdown">
+                    <li class="dropdown-item">
+                        <a href="/zh/" class="nav-link external">博客</a>
+                    </li>
+                    <li class="dropdown-item">
+                        <a href="https://space.bilibili.com/390683219" target="_blank"
+                           rel="noopener noreferrer" class="nav-link external">B站</a>
+                    </li>
+                    <li class="dropdown-item">
+                        <a href="https://juejin.cn/user/13673577331607" target="_blank"
+                           rel="noopener noreferrer" class="nav-link external">掘金</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="nav-item">
+            <div class="dropdown-wrapper open">
+                <a class="dropdown-title">
+                    <span>Links</span>
+                    <span class="arrow down"></span>
+                </a>
+                <ul class="nav-dropdown">
                     <li class="dropdown-item">
                         <a href="http://www.apache.org/" target="_blank"
                            rel="noopener noreferrer" class="nav-link external">
@@ -3465,11 +5438,9 @@ if (!doNotTrack) {
     </nav>
 </div>
 
-    
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/bootstrap.bundle.min.js"></script>
 
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
 
 
 
@@ -3479,12 +5450,10 @@ if (!doNotTrack) {
 
 
 
+<script src="/js/main.min.dc00f5ca911ee5aa105ea6de6b3b7e8d8169ba5a3bf156b1fcfe23dfe3e62b0a.js" integrity="sha256-3AD1ypEe5aoQXqbeazt&#43;jYFpulo78Vax/P4j3&#43;PmKwo=" crossorigin="anonymous"></script>
 
 
-<script src="/js/main.min.e51dc6fd750f0b866b398da311228bbd3bfdc1d53afbb02d4f52df1680f5f17f.js" integrity="sha256-5R3G/XUPC4ZrOY2jESKLvTv9wdU6&#43;7AtT1LfFoD18X8=" crossorigin="anonymous"></script>
-
-
-<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script src="/js/mermaid.min.js"></script>
 <script>
     window.onload = () => mermaid.init(undefined, ".language-mermaid");
 </script>
