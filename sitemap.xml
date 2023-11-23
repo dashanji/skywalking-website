@@ -11057,6 +11057,12 @@
   </url>
   
   <url>
+    <loc>/docs/main/next/en/debugging/config_dump/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>/search/</loc>
     <lastmod>2023-11-06T11:44:10+08:00</lastmod>
     <changefreq>daily</changefreq>
