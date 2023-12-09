@@ -38,7 +38,7 @@
 <meta itemprop="description" content="Configuration Vocabulary The Configuration Vocabulary lists all available configurations provided by application.yml.
    Module Provider Settings Value(s) and Explanation System Environment Variable¹ Default     core default role Option values: Mixed/Receiver/Aggregator. Receiver mode OAP opens the service to the agents, then analyzes and aggregates the results, and forwards the results for distributed aggregation. Aggregator mode OAP receives data from Mixer and Receiver role OAP nodes, and performs 2nd level aggregation.">
 
-<meta itemprop="wordCount" content="4803">
+<meta itemprop="wordCount" content="4861">
 
 
 
@@ -2364,7 +2364,7 @@ if (!doNotTrack) {
   })()
 </script>
 
-                  <div class="commit-id">Commit Id: 5809200</div>
+                  <div class="commit-id">Commit Id: 8ff67d0</div>
                 
 
 
@@ -2687,15 +2687,7 @@ if (!doNotTrack) {
 <td>gRPCThreadPoolSize</td>
 <td>Pool size of gRPC server.</td>
 <td>SW_CORE_GRPC_THREAD_POOL_SIZE</td>
-<td>CPU core * 4</td>
-</tr>
-<tr>
-<td>-</td>
-<td>-</td>
-<td>gRPCThreadPoolQueueSize</td>
-<td>Queue size of gRPC server.</td>
-<td>SW_CORE_GRPC_POOL_QUEUE_SIZE</td>
-<td>10000</td>
+<td>Default to gRPC&rsquo;s implementation, which is a cached thread pool that can grow infinitely.</td>
 </tr>
 <tr>
 <td>-</td>
@@ -3727,15 +3719,7 @@ if (!doNotTrack) {
 <td>gRPCThreadPoolSize</td>
 <td>Pool size of gRPC server.</td>
 <td>SW_RECEIVER_GRPC_THREAD_POOL_SIZE</td>
-<td>CPU core * 4</td>
-</tr>
-<tr>
-<td>-</td>
-<td>-</td>
-<td>gRPCThreadPoolQueueSize</td>
-<td>Queue size of gRPC server.</td>
-<td>SW_RECEIVER_GRPC_POOL_QUEUE_SIZE</td>
-<td>10000</td>
+<td>Default to gRPC&rsquo;s implementation, which is a cached thread pool that can grow infinitely.</td>
 </tr>
 <tr>
 <td>-</td>
@@ -3936,6 +3920,14 @@ if (!doNotTrack) {
 <td><code>istioServiceNameRule</code> allows you to customize the service name in ALS via Kubernetes metadata. The available variables are <code>serviceEntry</code>. E.g. you can use <code>${serviceEntry.metadata.name}-${serviceEntry.metadata.labels.version}</code> to append the version number to the service name. Note that when using environment variables to pass this configuration, use single quotes(<code>''</code>) to avoid being evaluated by the shell.</td>
 <td>ISTIO_SERVICE_NAME_RULE</td>
 <td>${serviceEntry.metadata.name}</td>
+</tr>
+<tr>
+<td>-</td>
+<td>-</td>
+<td>istioServiceEntryIgnoredNamespaces</td>
+<td>When looking up service informations from the Istio ServiceEntries, some of the ServiceEntries might be created in several namespaces automatically by some components, and OAP will randomly pick one of them to build the service name, users can use this config to exclude ServiceEntries that they don&rsquo;t want to be used. Comma separated.</td>
+<td>SW_ISTIO_SERVICE_ENTRY_IGNORED_NAMESPACES</td>
+<td>-</td>
 </tr>
 <tr>
 <td>receiver-otel</td>
