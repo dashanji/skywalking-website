@@ -4850,6 +4850,12 @@
   </url>
   
   <url>
+    <loc>/docs/main/next/en/swip/swip-2/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>/docs/main/next/en/setup/backend/filelog-native/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -5265,6 +5271,12 @@
   
   <url>
     <loc>/docs/skywalking-rover/v0.5.0/en/setup/configuration/core/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/docs/main/next/en/swip/swip-1/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -8874,12 +8886,6 @@
   
   <url>
     <loc>/docs/main/v9.6.0/en/setup/backend/backend-mongodb-monitoring/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>/docs/main/next/en/swip/swip-1/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
