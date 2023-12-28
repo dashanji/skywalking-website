@@ -28,28 +28,31 @@
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
 
-<title>Profiling a Golang/C/C&#43;&#43;/Rust service on Linux | Apache SkyWalking</title><meta property="og:title" content="Profiling a Golang/C/C&#43;&#43;/Rust service on Linux" />
-<meta property="og:description" content="Profiling a Golang/C/C&#43;&#43;/Rust service on Linux This documentation helps you set up the configuration to find which processes want to be monitored and profiled.
-Startup service Startup your service in Linux, and make sure your service already has the symbol data inside the binary file. So we could locate the stack symbol, It could be checked following these ways:
- objdump: Using objdump --syms path/to/service. readelf: Using readelf --syms path/to/service.  Starting Rover Enable Linux Process Scanner After your service has been started, then configure the Linux process scanner to let Rover know how to find the service." />
+<title>Deploy on Kubernetes | Apache SkyWalking</title><meta property="og:title" content="Deploy on Kubernetes" />
+<meta property="og:description" content="Deploy on Kubernetes This documentation helps you to set up the rover in the Kubernetes environment.
+Startup Kubernetes Make sure that you already have a Kubernetes cluster.
+If you don&rsquo;t have a running cluster, you can also leverage KinD (Kubernetes in Docker) or minikube to create a cluster.
+Deploy Rover Please follow the rover-daemonset.yml to deploy the rover in your Kubernetes cluster. Update the comment in the file, which includes two configs:" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/docs/skywalking-rover/next/en/setup/examples/cases/profiling-process/readme/" />
+<meta property="og:url" content="/docs/skywalking-rover/next/en/setup/examples/deploy/kubernetes/readme/" />
 
-<meta itemprop="name" content="Profiling a Golang/C/C&#43;&#43;/Rust service on Linux">
-<meta itemprop="description" content="Profiling a Golang/C/C&#43;&#43;/Rust service on Linux This documentation helps you set up the configuration to find which processes want to be monitored and profiled.
-Startup service Startup your service in Linux, and make sure your service already has the symbol data inside the binary file. So we could locate the stack symbol, It could be checked following these ways:
- objdump: Using objdump --syms path/to/service. readelf: Using readelf --syms path/to/service.  Starting Rover Enable Linux Process Scanner After your service has been started, then configure the Linux process scanner to let Rover know how to find the service.">
+<meta itemprop="name" content="Deploy on Kubernetes">
+<meta itemprop="description" content="Deploy on Kubernetes This documentation helps you to set up the rover in the Kubernetes environment.
+Startup Kubernetes Make sure that you already have a Kubernetes cluster.
+If you don&rsquo;t have a running cluster, you can also leverage KinD (Kubernetes in Docker) or minikube to create a cluster.
+Deploy Rover Please follow the rover-daemonset.yml to deploy the rover in your Kubernetes cluster. Update the comment in the file, which includes two configs:">
 
-<meta itemprop="wordCount" content="358">
+<meta itemprop="wordCount" content="127">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Profiling a Golang/C/C&#43;&#43;/Rust service on Linux"/>
-<meta name="twitter:description" content="Profiling a Golang/C/C&#43;&#43;/Rust service on Linux This documentation helps you set up the configuration to find which processes want to be monitored and profiled.
-Startup service Startup your service in Linux, and make sure your service already has the symbol data inside the binary file. So we could locate the stack symbol, It could be checked following these ways:
- objdump: Using objdump --syms path/to/service. readelf: Using readelf --syms path/to/service.  Starting Rover Enable Linux Process Scanner After your service has been started, then configure the Linux process scanner to let Rover know how to find the service."/>
+<meta name="twitter:title" content="Deploy on Kubernetes"/>
+<meta name="twitter:description" content="Deploy on Kubernetes This documentation helps you to set up the rover in the Kubernetes environment.
+Startup Kubernetes Make sure that you already have a Kubernetes cluster.
+If you don&rsquo;t have a running cluster, you can also leverage KinD (Kubernetes in Docker) or minikube to create a cluster.
+Deploy Rover Please follow the rover-daemonset.yml to deploy the rover in your Kubernetes cluster. Update the comment in the file, which includes two configs:"/>
 
 <script type="application/javascript">
 var doNotTrack = false;
@@ -78,7 +81,7 @@ if (!doNotTrack) {
 
 
 
-    <title>Profiling a Golang/C/C&#43;&#43;/Rust service on Linux | Apache SkyWalking</title>
+    <title>Deploy on Kubernetes | Apache SkyWalking</title>
   </head>
   <body class="td-page  project-doc">
     <header>
@@ -413,41 +416,7 @@ if (!doNotTrack) {
 
     <li>
         
-
-            
-            <a href="#">Process Discovery Module<i class="iconfont icon-arrow-right pull-right"></i></a>
-            
-
-            
-<ul class="sidebar-submenu">
-    
-
-    <li>
-        
-            <a href="/docs/skywalking-rover/next/en/setup/configuration/process_discovery/overview">Overview</a>
-        
-    </li>
-
-    
-
-    <li>
-        
-            <a href="/docs/skywalking-rover/next/en/setup/configuration/process_discovery/scanner">Linux Process Scanner</a>
-        
-    </li>
-
-    
-
-    <li>
-        
-            <a href="/docs/skywalking-rover/next/en/setup/configuration/process_discovery/kubernetes">Kubernetes Process Detector</a>
-        
-    </li>
-
-    
-
-</ul>
-
+            <a href="/docs/skywalking-rover/next/en/setup/configuration/process-discovery">Process Discovery Module</a>
         
     </li>
 
@@ -456,6 +425,14 @@ if (!doNotTrack) {
     <li>
         
             <a href="/docs/skywalking-rover/next/en/setup/configuration/profiling">Profiling Module</a>
+        
+    </li>
+
+    
+
+    <li>
+        
+            <a href="/docs/skywalking-rover/next/en/setup/configuration/accesslog">Access Log Module</a>
         
     </li>
 
@@ -492,49 +469,7 @@ if (!doNotTrack) {
 
     <li>
         
-            <a href="/docs/skywalking-rover/next/en/setup/examples/deploy/linux/readme">Deploy on Linux</a>
-        
-    </li>
-
-    
-
-</ul>
-
-        
-    </li>
-
-    
-
-    <li>
-        
-
-            
-            <a href="#">Use Cases<i class="iconfont icon-arrow-right pull-right"></i></a>
-            
-
-            
-<ul class="sidebar-submenu">
-    
-
-    <li>
-        
-            <a href="/docs/skywalking-rover/next/en/setup/examples/cases/profiling-process/readme">Profiling a Golang/C/C&#43;&#43;/Rust service on Linux</a>
-        
-    </li>
-
-    
-
-    <li>
-        
-            <a href="/docs/skywalking-rover/next/en/setup/examples/cases/agent-sensor/readme">Detect Process by Agent Sensor</a>
-        
-    </li>
-
-    
-
-    <li>
-        
-            <a href="/docs/skywalking-rover/next/en/setup/examples/cases/kubernetes-process/readme">Detect Process in Kubernetes Environemnt</a>
+            <a href="/docs/skywalking-rover/next/en/setup/examples/deploy/kubernetes/readme">Deploy on Kubernetes</a>
         
     </li>
 
@@ -656,7 +591,7 @@ if (!doNotTrack) {
   })()
 </script>
 
-                  <div class="commit-id">Commit Id: c979bbf</div>
+                  <div class="commit-id">Commit Id: 8cd7adc</div>
                 
 
 
@@ -682,77 +617,22 @@ if (!doNotTrack) {
 
 
 
-	<h1 id="profiling-a-golangccrust-service-on-linux">Profiling a Golang/C/C++/Rust service on Linux</h1>
-<p>This documentation helps you set up the configuration to find which processes want to be monitored and profiled.</p>
-<h2 id="startup-service">Startup service</h2>
-<p>Startup your service in Linux, and make sure your service already has the symbol data inside the binary file.
-So we could locate the stack symbol, It could be checked following these ways:</p>
+	<h1 id="deploy-on-kubernetes">Deploy on Kubernetes</h1>
+<p>This documentation helps you to set up the rover in the Kubernetes environment.</p>
+<h2 id="startup-kubernetes">Startup Kubernetes</h2>
+<p>Make sure that you already have a Kubernetes cluster.</p>
+<p>If you don&rsquo;t have a running cluster, you can also leverage <a href="https://kind.sigs.k8s.io">KinD (Kubernetes in Docker)</a>
+or <a href="https://minikube.sigs.k8s.io">minikube</a> to create a cluster.</p>
+<h2 id="deploy-rover">Deploy Rover</h2>
+<p>Please follow the <a href="./../rover-daemonset.yml">rover-daemonset.yml</a> to deploy the rover in your Kubernetes cluster.
+Update the comment in the file, which includes two configs:</p>
 <ol>
-<li><strong>objdump</strong>: Using <code>objdump --syms path/to/service</code>.</li>
-<li><strong>readelf</strong>: Using <code>readelf --syms path/to/service</code>.</li>
+<li><strong>Rover docker image</strong>: You could use <code>make docker</code> to build an image and upload it to your private registry, or update from the public image.</li>
+<li><strong>OAP address</strong>: Update the OAP address.</li>
 </ol>
-<h2 id="starting-rover">Starting Rover</h2>
-<h3 id="enable-linux-process-scanner">Enable Linux Process Scanner</h3>
-<p>After your service has been started, then configure the Linux process scanner to let Rover know how to find the service.
-Please make sure the Linux Process Detector has been active.</p>
-<p>Then configure the finder to locate/identity service. It contains these data configure:</p>
-<ol>
-<li>Regex to locate the service by command line.</li>
-<li>Update the process entity builder.</li>
-</ol>
-<h4 id="locate-service">Locate Service</h4>
-<p>You could use the <code>ps -ef</code> and <code>grep</code> to filter the which process you want to profile. In this case, my service is <code>sqrt</code>.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ ps -ef|grep sqrt
-root      <span style="color:#099">2072</span>    <span style="color:#099">1790</span>  <span style="color:#099">0</span> 14:59 pts/0    00:00:00 ./sqrt <span style="color:#008080">name</span><span style="color:#000;font-weight:bold">=</span>a
-</code></pre></div><p>Following the command example above, you could see the last column showing the process command line is <code>./sqrt name=a</code>.
-We use the regex to filter the process, In this case, we could use <code>sqrt</code> as the service identity.</p>
-<h4 id="update-process-entity">Update Process Entity</h4>
-<p>For the demo, we update the entity data as:</p>
-<ol>
-<li><strong>layer</strong>: As the <code>OS_LINUX</code>.</li>
-<li><strong>service</strong>: As the <code>sqrt</code>.</li>
-<li><strong>instance</strong>: As local IPv4 address by network interface <code>en0</code>.</li>
-<li><strong>process</strong>: As the executable file name: <code>sqrt</code>.</li>
-<li><strong>labels</strong>*: As empty.</li>
-</ol>
-<p>You could be following <a href="../../../../configuration/process_discovery/scanner">this configuration</a> to get more configuration information.</p>
-<h3 id="enable-profiling">Enable Profiling</h3>
-<p>Make sure the profiling module has been active.</p>
-<p>You could be following <a href="../../../../configuration/profiling">this configuration</a> to get more configuration information.</p>
-<h3 id="full-configuration">Full Configuration</h3>
-<p>Please follow the comment to update the backend address to your SkyWalking OAP address.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">core:
-  backend:
-    addr: localhost:11800 <span style="color:#998;font-style:italic"># please change the backend address to your SkyWalking OAP address</span>
-    enable_TLS: <span style="color:#0086b3">false</span>
-    client_pem_path: <span style="color:#d14">&#34;client.pem&#34;</span>
-    client_key_path: <span style="color:#d14">&#34;client.key&#34;</span>
-    insecure_skip_verify: <span style="color:#0086b3">false</span>
-    ca_pem_path: <span style="color:#d14">&#34;ca.pem&#34;</span>
-    check_period: <span style="color:#099">5</span>
-    authentication: <span style="color:#d14">&#34;&#34;</span>
-    
-process_discovery:
-  heartbeat_period: 20s
-  scanner:
-    period: 3s
-    mode: REGEX
-    regex:
-      - match_cmd: sqrt
-        layer: OS_LINUX
-        service_name: sqrt
-        instance_name: <span style="color:#000;font-weight:bold">{{</span>.Rover.HostIPV4 <span style="color:#d14">&#34;en0&#34;</span><span style="color:#000;font-weight:bold">}}</span>
-        process_name: <span style="color:#000;font-weight:bold">{{</span>.Process.ExeName<span style="color:#000;font-weight:bold">}}</span>
-        labels: <span style="color:#d14">&#34;&#34;</span>
+<p>Then, you could use <code>kuberctl apply -f rover-daemonset.yml</code> to deploy the skywalking-rover into your cluster.
+It would deploy in each node as a DaemonSet.</p>
 
-profiling:
-  active: <span style="color:#0086b3">true</span>
-  check_interval: 10s
-  flush_interval: 5s
-  task:
-    on_cpu:
-      dump_period: 9ms
-</code></pre></div>
 
 
 
@@ -787,16 +667,10 @@ profiling:
 
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#profiling-a-golangccrust-service-on-linux">Profiling a Golang/C/C++/Rust service on Linux</a>
+    <li><a href="#deploy-on-kubernetes">Deploy on Kubernetes</a>
       <ul>
-        <li><a href="#startup-service">Startup service</a></li>
-        <li><a href="#starting-rover">Starting Rover</a>
-          <ul>
-            <li><a href="#enable-linux-process-scanner">Enable Linux Process Scanner</a></li>
-            <li><a href="#enable-profiling">Enable Profiling</a></li>
-            <li><a href="#full-configuration">Full Configuration</a></li>
-          </ul>
-        </li>
+        <li><a href="#startup-kubernetes">Startup Kubernetes</a></li>
+        <li><a href="#deploy-rover">Deploy Rover</a></li>
       </ul>
     </li>
   </ul>
@@ -914,14 +788,6 @@ profiling:
 
     </div>
     
-
-
-
-
-
-
-
-
 
 
 

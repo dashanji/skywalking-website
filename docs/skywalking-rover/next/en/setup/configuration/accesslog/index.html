@@ -28,31 +28,25 @@
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
 
-<title>Deploy on Linux | Apache SkyWalking</title><meta property="og:title" content="Deploy on Linux" />
-<meta property="og:description" content="Deploy on Linux Install Download Download the latest release version from SkyWalking Release Page.
-Update the address of the backend Update the backend address in the config file, please read this documentation for more detail.
-Active Feature Active features need to use, please follow the Use case.
-Start Rover Execute the script bin/startup.sh to start. Then It could print logging to this file: logs/rover.log." />
+<title>Access Log Module | Apache SkyWalking</title><meta property="og:title" content="Access Log Module" />
+<meta property="og:description" content="Access Log Module The access log module is used to collecting the network access logs from the Kerbernetes Module, and send access logs to the backend server for analyze.
+Configuration    Name Default Environment Key Description     access_log.active false ROVER_ACCESS_LOG_ACTIVE Is active the access log monitoring.   access_log.flush.max_count 2000 ROVER_ACCESS_LOG_FLUSH_MAX_COUNT The max count of the access log when flush to the backend.   access_log." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/docs/skywalking-rover/next/en/setup/examples/deploy/linux/readme/" />
+<meta property="og:url" content="/docs/skywalking-rover/next/en/setup/configuration/accesslog/" />
 
-<meta itemprop="name" content="Deploy on Linux">
-<meta itemprop="description" content="Deploy on Linux Install Download Download the latest release version from SkyWalking Release Page.
-Update the address of the backend Update the backend address in the config file, please read this documentation for more detail.
-Active Feature Active features need to use, please follow the Use case.
-Start Rover Execute the script bin/startup.sh to start. Then It could print logging to this file: logs/rover.log.">
+<meta itemprop="name" content="Access Log Module">
+<meta itemprop="description" content="Access Log Module The access log module is used to collecting the network access logs from the Kerbernetes Module, and send access logs to the backend server for analyze.
+Configuration    Name Default Environment Key Description     access_log.active false ROVER_ACCESS_LOG_ACTIVE Is active the access log monitoring.   access_log.flush.max_count 2000 ROVER_ACCESS_LOG_FLUSH_MAX_COUNT The max count of the access log when flush to the backend.   access_log.">
 
-<meta itemprop="wordCount" content="64">
+<meta itemprop="wordCount" content="271">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Deploy on Linux"/>
-<meta name="twitter:description" content="Deploy on Linux Install Download Download the latest release version from SkyWalking Release Page.
-Update the address of the backend Update the backend address in the config file, please read this documentation for more detail.
-Active Feature Active features need to use, please follow the Use case.
-Start Rover Execute the script bin/startup.sh to start. Then It could print logging to this file: logs/rover.log."/>
+<meta name="twitter:title" content="Access Log Module"/>
+<meta name="twitter:description" content="Access Log Module The access log module is used to collecting the network access logs from the Kerbernetes Module, and send access logs to the backend server for analyze.
+Configuration    Name Default Environment Key Description     access_log.active false ROVER_ACCESS_LOG_ACTIVE Is active the access log monitoring.   access_log.flush.max_count 2000 ROVER_ACCESS_LOG_FLUSH_MAX_COUNT The max count of the access log when flush to the backend.   access_log."/>
 
 <script type="application/javascript">
 var doNotTrack = false;
@@ -81,7 +75,7 @@ if (!doNotTrack) {
 
 
 
-    <title>Deploy on Linux | Apache SkyWalking</title>
+    <title>Access Log Module | Apache SkyWalking</title>
   </head>
   <body class="td-page  project-doc">
     <header>
@@ -416,41 +410,7 @@ if (!doNotTrack) {
 
     <li>
         
-
-            
-            <a href="#">Process Discovery Module<i class="iconfont icon-arrow-right pull-right"></i></a>
-            
-
-            
-<ul class="sidebar-submenu">
-    
-
-    <li>
-        
-            <a href="/docs/skywalking-rover/next/en/setup/configuration/process_discovery/overview">Overview</a>
-        
-    </li>
-
-    
-
-    <li>
-        
-            <a href="/docs/skywalking-rover/next/en/setup/configuration/process_discovery/scanner">Linux Process Scanner</a>
-        
-    </li>
-
-    
-
-    <li>
-        
-            <a href="/docs/skywalking-rover/next/en/setup/configuration/process_discovery/kubernetes">Kubernetes Process Detector</a>
-        
-    </li>
-
-    
-
-</ul>
-
+            <a href="/docs/skywalking-rover/next/en/setup/configuration/process-discovery">Process Discovery Module</a>
         
     </li>
 
@@ -459,6 +419,14 @@ if (!doNotTrack) {
     <li>
         
             <a href="/docs/skywalking-rover/next/en/setup/configuration/profiling">Profiling Module</a>
+        
+    </li>
+
+    
+
+    <li>
+        
+            <a href="/docs/skywalking-rover/next/en/setup/configuration/accesslog">Access Log Module</a>
         
     </li>
 
@@ -495,49 +463,7 @@ if (!doNotTrack) {
 
     <li>
         
-            <a href="/docs/skywalking-rover/next/en/setup/examples/deploy/linux/readme">Deploy on Linux</a>
-        
-    </li>
-
-    
-
-</ul>
-
-        
-    </li>
-
-    
-
-    <li>
-        
-
-            
-            <a href="#">Use Cases<i class="iconfont icon-arrow-right pull-right"></i></a>
-            
-
-            
-<ul class="sidebar-submenu">
-    
-
-    <li>
-        
-            <a href="/docs/skywalking-rover/next/en/setup/examples/cases/profiling-process/readme">Profiling a Golang/C/C&#43;&#43;/Rust service on Linux</a>
-        
-    </li>
-
-    
-
-    <li>
-        
-            <a href="/docs/skywalking-rover/next/en/setup/examples/cases/agent-sensor/readme">Detect Process by Agent Sensor</a>
-        
-    </li>
-
-    
-
-    <li>
-        
-            <a href="/docs/skywalking-rover/next/en/setup/examples/cases/kubernetes-process/readme">Detect Process in Kubernetes Environemnt</a>
+            <a href="/docs/skywalking-rover/next/en/setup/examples/deploy/kubernetes/readme">Deploy on Kubernetes</a>
         
     </li>
 
@@ -659,7 +585,7 @@ if (!doNotTrack) {
   })()
 </script>
 
-                  <div class="commit-id">Commit Id: c979bbf</div>
+                  <div class="commit-id">Commit Id: 8cd7adc</div>
                 
 
 
@@ -685,16 +611,77 @@ if (!doNotTrack) {
 
 
 
-	<h1 id="deploy-on-linux">Deploy on Linux</h1>
-<h2 id="install">Install</h2>
-<h3 id="download">Download</h3>
-<p>Download the latest release version from <a href="https://skywalking.apache.org/downloads/#SkyWalkingRover">SkyWalking Release Page</a>.</p>
-<h3 id="update-the-address-of-the-backend">Update the address of the backend</h3>
-<p>Update the backend address in the config file, please read <a href="../../../../configuration/core">this documentation</a> for more detail.</p>
-<h3 id="active-feature">Active Feature</h3>
-<p>Active features need to use, please follow the <a href="../../../../overview#use-cases">Use case</a>.</p>
-<h3 id="start-rover">Start Rover</h3>
-<p>Execute the script <code>bin/startup.sh</code> to start. Then It could print logging to this file: <code>logs/rover.log</code>.</p>
+	<h1 id="access-log-module">Access Log Module</h1>
+<p>The access log module is used to collecting the network access logs from the <a href="../process_discovery/kubernetes">Kerbernetes Module</a>,
+and send <a href="https://github.com/apache/skywalking-data-collect-protocol/blob/master/ebpf/accesslog.proto">access logs</a> to the backend server for analyze.</p>
+<h2 id="configuration">Configuration</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Default</th>
+<th>Environment Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>access_log.active</td>
+<td>false</td>
+<td>ROVER_ACCESS_LOG_ACTIVE</td>
+<td>Is active the access log monitoring.</td>
+</tr>
+<tr>
+<td>access_log.flush.max_count</td>
+<td>2000</td>
+<td>ROVER_ACCESS_LOG_FLUSH_MAX_COUNT</td>
+<td>The max count of the access log when flush to the backend.</td>
+</tr>
+<tr>
+<td>access_log.flush.period</td>
+<td>5s</td>
+<td>ROVER_ACCESS_LOG_FLUSH_PERIOD</td>
+<td>The period of flush access log to the backend.</td>
+</tr>
+<tr>
+<td>access_log_protocol_analyze.per_cpu_buffer</td>
+<td>400KB</td>
+<td>ROVER_ACCESS_LOG_PROTOCOL_ANALYZE_PER_CPU_BUFFER</td>
+<td>The size of socket data buffer on each CPU.</td>
+</tr>
+<tr>
+<td>access_log.protocol_analyze.parallels</td>
+<td>2</td>
+<td>ROVER_ACCESS_LOG_PROTOCOL_ANALYZE_PARALLELS</td>
+<td>The count of parallel protocol analyzer.</td>
+</tr>
+<tr>
+<td>access_log.protocol_analyze.queue_size</td>
+<td>5000</td>
+<td>ROVER_ACCESS_LOG_PROTOCOL_ANALYZE_QUEUE_SIZE</td>
+<td>The size of per paralleled analyze queue.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="collectors">Collectors</h2>
+<h3 id="socket-connectacceptclose">Socket Connect/Accept/Close</h3>
+<p>Monitor all socket <code>connect</code>, <code>accept</code>, and <code>close</code> events from monitored processes by attaching eBPF program to the respective <a href="https://docs.kernel.org/trace/tracepoints.html">trace points</a>.</p>
+<h3 id="socket-traffic">Socket traffic</h3>
+<p>Capture all socket traffic from monitored processes by attaching eBPF program to <a href="https://linasm.sourceforge.net/docs/syscalls/network.php">network syscalls</a>.</p>
+<h4 id="protocol">Protocol</h4>
+<p>Data collection is followed by protocol analysis. Currently, the supported protocols include:</p>
+<ol>
+<li>HTTP/1.x</li>
+<li>HTTP/2</li>
+</ol>
+<p>Note: As HTTP2 is a stateful protocol, it only supports monitoring processes that start after monitor. Processes already running at the time of monitoring may fail to provide complete data, leading to unsuccessful analysis.</p>
+<h4 id="tls">TLS</h4>
+<p>When a process uses the TLS protocol for data transfer, Rover monitors libraries such as OpenSSL, BoringSSL, GoTLS, and NodeTLS to access the raw content.
+This feature is also applicable for protocol analysis.</p>
+<p>Note: the parsing of TLS protocols in Java is currently not supported.</p>
+<h4 id="l2-l4">L2-L4</h4>
+<p>During data transmission, Rover records each packet&rsquo;s through the network layers L2 to L4 using <a href="https://docs.kernel.org/trace/kprobes.html">kprobes</a>.
+This approach enhances the understanding of each packet&rsquo;s transmission process, facilitating easier localization and troubleshooting of network issues.</p>
 
 
 
@@ -730,14 +717,13 @@ if (!doNotTrack) {
 
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#deploy-on-linux">Deploy on Linux</a>
+    <li><a href="#access-log-module">Access Log Module</a>
       <ul>
-        <li><a href="#install">Install</a>
+        <li><a href="#configuration">Configuration</a></li>
+        <li><a href="#collectors">Collectors</a>
           <ul>
-            <li><a href="#download">Download</a></li>
-            <li><a href="#update-the-address-of-the-backend">Update the address of the backend</a></li>
-            <li><a href="#active-feature">Active Feature</a></li>
-            <li><a href="#start-rover">Start Rover</a></li>
+            <li><a href="#socket-connectacceptclose">Socket Connect/Accept/Close</a></li>
+            <li><a href="#socket-traffic">Socket traffic</a></li>
           </ul>
         </li>
       </ul>
@@ -857,14 +843,6 @@ if (!doNotTrack) {
 
     </div>
     
-
-
-
-
-
-
-
-
 
 
 
