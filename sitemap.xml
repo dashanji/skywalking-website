@@ -12426,6 +12426,12 @@
   </url>
   
   <url>
+    <loc>/docs/main/next/en/swip/swip-3/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>/docs/skywalking-go/next/en/advanced-features/grpc-tls/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
