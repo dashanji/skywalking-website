@@ -29,31 +29,31 @@
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
 
-<title>CRUD IndexRuleBindings | Apache SkyWalking</title><meta property="og:title" content="CRUD IndexRuleBindings" />
-<meta property="og:description" content="CRUD IndexRuleBindings CRUD operations create, read, update and delete index rule bindings.
-An index rule binding is a bridge to connect several index rules to a subject. This binding is valid between begin_at_nanoseconds and expire_at_nanoseconds, that provides flexible strategies to control how to generate time series indices.
+<title>Query [Streams](../../../../concept/data-model#streams) | Apache SkyWalking</title><meta property="og:title" content="Query [Streams](../../../../concept/data-model#streams)" />
+<meta property="og:description" content="Query Streams Query operation queries the data in a stream.
 bydbctl is the command line tool in examples.
-Create operation Create operation adds a new index rule binding to the database&rsquo;s metadata registry repository." />
+The input contains two parts:
+ Request: a YAML-based text which is defined by the API Time Range: YAML and CLI&rsquo;s flags both support it.  Time Range The query specification contains time_range field. The request should set absolute times to it. bydbctl also provides start and end flags to support passing absolute and relative times." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/docs/skywalking-banyandb/next/crud/index_rule_binding/" />
+<meta property="og:url" content="/docs/skywalking-banyandb/next/interacting/bydbctl/query/stream/" />
 
-<meta itemprop="name" content="CRUD IndexRuleBindings">
-<meta itemprop="description" content="CRUD IndexRuleBindings CRUD operations create, read, update and delete index rule bindings.
-An index rule binding is a bridge to connect several index rules to a subject. This binding is valid between begin_at_nanoseconds and expire_at_nanoseconds, that provides flexible strategies to control how to generate time series indices.
+<meta itemprop="name" content="Query [Streams](../../../../concept/data-model#streams)">
+<meta itemprop="description" content="Query Streams Query operation queries the data in a stream.
 bydbctl is the command line tool in examples.
-Create operation Create operation adds a new index rule binding to the database&rsquo;s metadata registry repository.">
+The input contains two parts:
+ Request: a YAML-based text which is defined by the API Time Range: YAML and CLI&rsquo;s flags both support it.  Time Range The query specification contains time_range field. The request should set absolute times to it. bydbctl also provides start and end flags to support passing absolute and relative times.">
 
-<meta itemprop="wordCount" content="398">
+<meta itemprop="wordCount" content="696">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="CRUD IndexRuleBindings"/>
-<meta name="twitter:description" content="CRUD IndexRuleBindings CRUD operations create, read, update and delete index rule bindings.
-An index rule binding is a bridge to connect several index rules to a subject. This binding is valid between begin_at_nanoseconds and expire_at_nanoseconds, that provides flexible strategies to control how to generate time series indices.
+<meta name="twitter:title" content="Query [Streams](../../../../concept/data-model#streams)"/>
+<meta name="twitter:description" content="Query Streams Query operation queries the data in a stream.
 bydbctl is the command line tool in examples.
-Create operation Create operation adds a new index rule binding to the database&rsquo;s metadata registry repository."/>
+The input contains two parts:
+ Request: a YAML-based text which is defined by the API Time Range: YAML and CLI&rsquo;s flags both support it.  Time Range The query specification contains time_range field. The request should set absolute times to it. bydbctl also provides start and end flags to support passing absolute and relative times."/>
 
 
 
@@ -71,7 +71,7 @@ Create operation Create operation adds a new index rule binding to the database&
 
 
 
-    <title>CRUD IndexRuleBindings | Apache SkyWalking</title>
+    <title>Query [Streams](../../../../concept/data-model#streams) | Apache SkyWalking</title>
   </head>
   <body class="td-page  project-doc">
     <header>
@@ -425,41 +425,9 @@ Create operation Create operation adds a new index rule binding to the database&
 
     <li>
         
-            <a href="/docs/skywalking-banyandb/next/clients">Clients</a>
-        
-    </li>
-
-    
-
-    <li>
-        
-            <a href="">Insert and Update Data</a>
-        
-    </li>
-
-    
-
-    <li>
-        
-            <a href="">Querying Data</a>
-        
-    </li>
-
-    
-
-    <li>
-        
-            <a href="">Deleting Data</a>
-        
-    </li>
-
-    
-
-    <li>
-        
 
             
-            <a href="#">CRUD Operations<i class="iconfont icon-arrow-right pull-right"></i></a>
+            <a href="#">CLI<i class="iconfont icon-arrow-right pull-right"></i></a>
             
 
             
@@ -468,7 +436,7 @@ Create operation Create operation adds a new index rule binding to the database&
 
     <li>
         
-            <a href="/docs/skywalking-banyandb/next/crud/group">Group</a>
+            <a href="/docs/skywalking-banyandb/next/interacting/bydbctl/bydbctl">bydbctl</a>
         
     </li>
 
@@ -478,7 +446,7 @@ Create operation Create operation adds a new index rule binding to the database&
         
 
             
-            <a href="#">Measure<i class="iconfont icon-arrow-right pull-right"></i></a>
+            <a href="#">CRUD Schema<i class="iconfont icon-arrow-right pull-right"></i></a>
             
 
             
@@ -487,7 +455,7 @@ Create operation Create operation adds a new index rule binding to the database&
 
     <li>
         
-            <a href="/docs/skywalking-banyandb/next/crud/measure/schema">Schema</a>
+            <a href="/docs/skywalking-banyandb/next/interacting/bydbctl/schema/group">Group</a>
         
     </li>
 
@@ -495,7 +463,31 @@ Create operation Create operation adds a new index rule binding to the database&
 
     <li>
         
-            <a href="/docs/skywalking-banyandb/next/crud/measure/query">Query</a>
+            <a href="/docs/skywalking-banyandb/next/interacting/bydbctl/schema/measure">Measure</a>
+        
+    </li>
+
+    
+
+    <li>
+        
+            <a href="/docs/skywalking-banyandb/next/interacting/bydbctl/schema/stream">Stream</a>
+        
+    </li>
+
+    
+
+    <li>
+        
+            <a href="/docs/skywalking-banyandb/next/interacting/bydbctl/schema/index-rule">IndexRule</a>
+        
+    </li>
+
+    
+
+    <li>
+        
+            <a href="/docs/skywalking-banyandb/next/interacting/bydbctl/schema/index-rule-binding">IndexRuleBinding</a>
         
     </li>
 
@@ -512,7 +504,7 @@ Create operation Create operation adds a new index rule binding to the database&
         
 
             
-            <a href="#">Stream<i class="iconfont icon-arrow-right pull-right"></i></a>
+            <a href="#">Querying Data<i class="iconfont icon-arrow-right pull-right"></i></a>
             
 
             
@@ -521,7 +513,7 @@ Create operation Create operation adds a new index rule binding to the database&
 
     <li>
         
-            <a href="/docs/skywalking-banyandb/next/crud/stream/schema">Schema</a>
+            <a href="/docs/skywalking-banyandb/next/interacting/bydbctl/query/measure">Measure</a>
         
     </li>
 
@@ -529,7 +521,15 @@ Create operation Create operation adds a new index rule binding to the database&
 
     <li>
         
-            <a href="/docs/skywalking-banyandb/next/crud/stream/query">Query</a>
+            <a href="/docs/skywalking-banyandb/next/interacting/bydbctl/query/stream">Stream</a>
+        
+    </li>
+
+    
+
+    <li>
+        
+            <a href="/docs/skywalking-banyandb/next/interacting/bydbctl/query/filter-operation">Filter Operation</a>
         
     </li>
 
@@ -544,7 +544,14 @@ Create operation Create operation adds a new index rule binding to the database&
 
     <li>
         
-            <a href="/docs/skywalking-banyandb/next/crud/index_rule">IndexRule</a>
+            <a href="/docs/skywalking-banyandb/next/interacting/bydbctl/property">CRUD Property</a>
+        
+    </li>
+
+    
+
+</ul>
+
         
     </li>
 
@@ -552,7 +559,7 @@ Create operation Create operation adds a new index rule binding to the database&
 
     <li>
         
-            <a href="/docs/skywalking-banyandb/next/crud/index_rule_binding">IndexRuleBinding</a>
+            <a href="/docs/skywalking-banyandb/next/interacting/java-client">Java Client</a>
         
     </li>
 
@@ -560,7 +567,142 @@ Create operation Create operation adds a new index rule binding to the database&
 
     <li>
         
-            <a href="/docs/skywalking-banyandb/next/crud/property">Property</a>
+
+            
+            <a href="/docs/skywalking-banyandb/next/interacting/web-ui">Web UI<i class="iconfont icon-arrow-right pull-right"></i></a>
+            
+
+            
+<ul class="sidebar-submenu">
+    
+
+    <li>
+        
+            <a href="/docs/skywalking-banyandb/next/interacting/web-ui/dashboard">Dashboard</a>
+        
+    </li>
+
+    
+
+    <li>
+        
+
+            
+            <a href="#">CRUD Schema<i class="iconfont icon-arrow-right pull-right"></i></a>
+            
+
+            
+<ul class="sidebar-submenu">
+    
+
+    <li>
+        
+            <a href="/docs/skywalking-banyandb/next/interacting/web-ui/schema/group">Group</a>
+        
+    </li>
+
+    
+
+    <li>
+        
+            <a href="/docs/skywalking-banyandb/next/interacting/web-ui/schema/measure">Measure</a>
+        
+    </li>
+
+    
+
+    <li>
+        
+            <a href="/docs/skywalking-banyandb/next/interacting/web-ui/schema/stream">Stream</a>
+        
+    </li>
+
+    
+
+    <li>
+        
+            <a href="/docs/skywalking-banyandb/next/interacting/web-ui/schema/index-rule">IndexRule</a>
+        
+    </li>
+
+    
+
+    <li>
+        
+            <a href="/docs/skywalking-banyandb/next/interacting/web-ui/schema/index-rule-binding">IndexRuleBinding</a>
+        
+    </li>
+
+    
+
+    <li>
+        
+            <a href="/docs/skywalking-banyandb/next/interacting/web-ui/schema/top-n-aggregation">Top N Aggregation</a>
+        
+    </li>
+
+    
+
+</ul>
+
+        
+    </li>
+
+    
+
+    <li>
+        
+
+            
+            <a href="#">Querying Data<i class="iconfont icon-arrow-right pull-right"></i></a>
+            
+
+            
+<ul class="sidebar-submenu">
+    
+
+    <li>
+        
+            <a href="/docs/skywalking-banyandb/next/interacting/web-ui/query/measure">Measure</a>
+        
+    </li>
+
+    
+
+    <li>
+        
+            <a href="/docs/skywalking-banyandb/next/interacting/web-ui/query/stream">Stream</a>
+        
+    </li>
+
+    
+
+</ul>
+
+        
+    </li>
+
+    
+
+    <li>
+        
+            <a href="/docs/skywalking-banyandb/next/interacting/web-ui/property">CRUD Property</a>
+        
+    </li>
+
+    
+
+    <li>
+        
+            <a href="/docs/skywalking-banyandb/next/interacting/java-client">Java Client</a>
+        
+    </li>
+
+    
+
+    <li>
+        
+            <a href="">Web UI</a>
         
     </li>
 
@@ -785,7 +927,7 @@ Create operation Create operation adds a new index rule binding to the database&
   })()
 </script>
 
-                  <div class="commit-id">Commit Id: f354d0a</div>
+                  <div class="commit-id">Commit Id: 4588b55</div>
                 
 
 
@@ -809,101 +951,172 @@ Create operation Create operation adds a new index rule binding to the database&
 
 
 
-	<h1 id="crud-indexrulebindings">CRUD IndexRuleBindings</h1>
-<p>CRUD operations create, read, update and delete index rule bindings.</p>
-<p>An index rule binding is a bridge to connect several index rules to a subject.
-This binding is valid between <code>begin_at_nanoseconds</code> and <code>expire_at_nanoseconds</code>, that provides flexible strategies to control how to generate time series indices.</p>
-<p><a href="../../clients#command-line"><code>bydbctl</code></a> is the command line tool in examples.</p>
-<h2 id="create-operation">Create operation</h2>
-<p>Create operation adds a new index rule binding to the database&rsquo;s metadata registry repository. If the index rule binding does not currently exist, create operation will create the schema.</p>
-<h3 id="examples">Examples</h3>
-<p>An index rule binding belongs to a unique group. We should create such a group with a catalog <code>CATALOG_STREAM</code> before creating a index rule binding. The subject(stream/measure) and index rule MUST live in the same group with the binding.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">bydbctl group create -f - <span style="color:#d14">&lt;&lt;EOF
-</span><span style="color:#d14">metadata:
-</span><span style="color:#d14">  name: default
-</span><span style="color:#d14">catalog: CATALOG_STREAM
-</span><span style="color:#d14">resource_opts:
-</span><span style="color:#d14">  shard_num: 2
-</span><span style="color:#d14">  segment_interval:
-</span><span style="color:#d14">    unit: UNIT_DAY
-</span><span style="color:#d14">    num: 1
-</span><span style="color:#d14">  ttl:
-</span><span style="color:#d14">    unit: UNIT_DAY
-</span><span style="color:#d14">    num: 7
-</span><span style="color:#d14">EOF</span>
-</code></pre></div><p>The group creates two shards to store indexRuleBinding data points. Every one day, it would create a
-segment which will generate a block every 2 hours.</p>
-<p>The data in this group will keep 7 days.</p>
-<p>Then, below command will create a new indexRuleBinding:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">bydbctl indexRuleBinding create -f - <span style="color:#d14">&lt;&lt;EOF
-</span><span style="color:#d14">metadata:
-</span><span style="color:#d14">  name: stream_binding
-</span><span style="color:#d14">  group: sw_stream
-</span><span style="color:#d14">rules:
-</span><span style="color:#d14">- trace_id
-</span><span style="color:#d14">- duration
-</span><span style="color:#d14">- endpoint_id
-</span><span style="color:#d14">- status_code
-</span><span style="color:#d14">- http.method
-</span><span style="color:#d14">- db.instance
-</span><span style="color:#d14">- db.type
-</span><span style="color:#d14">- mq.broker
-</span><span style="color:#d14">- mq.queue
-</span><span style="color:#d14">- mq.topic
-</span><span style="color:#d14">- extended_tags
-</span><span style="color:#d14">subject:
-</span><span style="color:#d14">  catalog: CATALOG_STREAM
-</span><span style="color:#d14">  name: sw
-</span><span style="color:#d14">begin_at: &#39;2021-04-15T01:30:15.01Z&#39;
-</span><span style="color:#d14">expire_at: &#39;2121-04-15T01:30:15.01Z&#39;
-</span><span style="color:#d14">EOF</span>
-</code></pre></div><p>The YAML contains:</p>
+	<h1 id="query-streamsconceptdata-modelstreams">Query <a href="../../../../concept/data-model#streams">Streams</a></h1>
+<p>Query operation queries the data in a stream.</p>
+<p><a href="../../bydbctl">bydbctl</a> is the command line tool in examples.</p>
+<p>The input contains two parts:</p>
 <ul>
-<li><code>rules</code>: references to the name of index rules.</li>
-<li><code>subject</code>: stream or measure&rsquo;s name and catalog.</li>
-<li><code>begin_at</code> and <code>expire_at</code>: the TTL of this binding.</li>
+<li>Request: a YAML-based text which is defined by the <a href="#api-reference">API</a></li>
+<li>Time Range: YAML and CLI&rsquo;s flags both support it.</li>
 </ul>
-<h2 id="get-operation">Get operation</h2>
-<p>Get(Read) operation gets an index rule binding&rsquo;s schema.</p>
-<h3 id="examples-of-getting">Examples of getting</h3>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">bydbctl indexRuleBinding get -g sw_stream -n stream_binding
-</code></pre></div><h2 id="update-operation">Update operation</h2>
-<p>Update operation update an index rule binding&rsquo;s schema.</p>
-<h3 id="examples-updating">Examples updating</h3>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">bydbctl indexRuleBinding update -f - <span style="color:#d14">&lt;&lt;EOF
-</span><span style="color:#d14">metadata:
-</span><span style="color:#d14">  name: stream_binding
-</span><span style="color:#d14">  group: sw_stream
-</span><span style="color:#d14">rules:
-</span><span style="color:#d14">- trace_id
-</span><span style="color:#d14">- duration
-</span><span style="color:#d14">- endpoint_id
-</span><span style="color:#d14">- status_code
-</span><span style="color:#d14">- http.method
-</span><span style="color:#d14">- db.instance
-</span><span style="color:#d14">- db.type
-</span><span style="color:#d14">- mq.broker
-</span><span style="color:#d14">- mq.queue
-</span><span style="color:#d14">- mq.topic
-</span><span style="color:#d14"># Remove this rule
-</span><span style="color:#d14"># - extended_tags
-</span><span style="color:#d14">subject:
-</span><span style="color:#d14">  catalog: CATALOG_STREAM
-</span><span style="color:#d14">  name: sw
-</span><span style="color:#d14">begin_at: &#39;2021-04-15T01:30:15.01Z&#39;
-</span><span style="color:#d14">expire_at: &#39;2121-04-15T01:30:15.01Z&#39;
+<h2 id="time-range">Time Range</h2>
+<p>The query specification contains <code>time_range</code> field. The request should set absolute times to it.
+<code>bydbctl</code> also provides <code>start</code> and <code>end</code> flags to support passing absolute and relative times.</p>
+<p>&ldquo;start&rdquo; and &ldquo;end&rdquo; specify a time range during which the query is performed, they can be an absolute time like <a href="https://www.rfc-editor.org/rfc/rfc3339">&ldquo;2006-01-02T15:04:05Z07:00&rdquo;</a>,
+or relative time (to the current time) like &ldquo;-30m&rdquo;, or &ldquo;30m&rdquo;.
+They are both optional and their default values follow the rules below:</p>
+<ul>
+<li>when &ldquo;start&rdquo; and &ldquo;end&rdquo; are both absent, &ldquo;start = now - 30 minutes&rdquo; and &ldquo;end = now&rdquo;,
+namely past 30 minutes;</li>
+<li>when &ldquo;start&rdquo; is absent and &ldquo;end&rdquo; is present, this command calculates &ldquo;start&rdquo; (minus 30 units),
+e.g. &ldquo;end = 2022-11-09T12:34:00Z&rdquo;, so &ldquo;start = end - 30 minutes = 2022-11-09T12:04:00Z&rdquo;;</li>
+<li>when &ldquo;start&rdquo; is present and &ldquo;end&rdquo; is absent, this command calculates &ldquo;end&rdquo; (plus 30 units),
+e.g. &ldquo;start = 2022-11-09T12:04:00Z&rdquo;, so &ldquo;end = start + 30 minutes = 2022-11-09T12:34:00Z&rdquo;.</li>
+</ul>
+<h2 id="understand-the-schema-you-are-querying">Understand the schema you are querying</h2>
+<p>Before querying the data, you need to know the stream name and the tag families and fields in the stream. You can use the <code>bydbctl stream get</code> command to get the stream schema.
+for example, if you want to get the schema of a stream named <code>segment</code> in the group <code>stream-segment</code>, you can use the below command:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">bydbctl stream get -g stream-segment -n segment
+</code></pre></div><div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">stream:
+  entity:
+    tagNames:
+    - service_id
+    - service_instance_id
+    - is_error
+  metadata:
+    createRevision: <span style="color:#d14">&#34;100&#34;</span>
+    group: stream-segment
+    id: <span style="color:#099">0</span>
+    modRevision: <span style="color:#d14">&#34;100&#34;</span>
+    name: segment
+  tagFamilies:
+  - name: storage-only
+    tags:
+    - indexedOnly: <span style="color:#0086b3">false</span>
+      name: service_id
+      type: TAG_TYPE_STRING
+    - indexedOnly: <span style="color:#0086b3">false</span>
+      name: service_instance_id
+      type: TAG_TYPE_STRING
+    - indexedOnly: <span style="color:#0086b3">false</span>
+      name: start_time
+      type: TAG_TYPE_INT
+    - indexedOnly: <span style="color:#0086b3">false</span>
+      name: is_error
+      type: TAG_TYPE_INT
+    - indexedOnly: <span style="color:#0086b3">false</span>
+      name: data_binary
+      type: TAG_TYPE_DATA_BINARY
+  - name: searchable
+    tags:
+    - indexedOnly: <span style="color:#0086b3">false</span>
+      name: segment_id
+      type: TAG_TYPE_STRING
+    - indexedOnly: <span style="color:#0086b3">false</span>
+      name: trace_id
+      type: TAG_TYPE_STRING
+    - indexedOnly: <span style="color:#0086b3">false</span>
+      name: endpoint_id
+      type: TAG_TYPE_STRING
+    - indexedOnly: <span style="color:#0086b3">false</span>
+      name: latency
+      type: TAG_TYPE_INT
+    - indexedOnly: <span style="color:#0086b3">true</span>
+      name: tags
+      type: TAG_TYPE_STRING_ARRAY
+  updatedAt: null
+</code></pre></div><h2 id="examples">Examples</h2>
+<p>The following examples use above schema to show how to query data in a stream and cover some common use cases:</p>
+<h3 id="query-between-specific-time-range">Query between specific time range</h3>
+<p>To retrieve elements in a stream named <code>sw</code> between <code>2022-10-15T22:32:48Z</code> and <code>2022-10-15T23:32:48Z</code> could use the below command. These elements also choose a tag <code>trace_id</code> which lives in a family named <code>searchable</code>.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">bydbctl stream query -f - <span style="color:#d14">&lt;&lt;EOF
+</span><span style="color:#d14">groups: [&#34;stream-segment&#34;]
+</span><span style="color:#d14">name: &#34;segment&#34;
+</span><span style="color:#d14">projection:
+</span><span style="color:#d14">  tagFamilies:
+</span><span style="color:#d14">    - name: &#34;searchable&#34;
+</span><span style="color:#d14">      tags: [&#34;trace_id&#34;]
+</span><span style="color:#d14">timeRange:
+</span><span style="color:#d14">  begin: 2022-10-15T22:32:48+08:00
+</span><span style="color:#d14">  end: 2022-10-15T23:32:48+08:00
 </span><span style="color:#d14">EOF</span>
-</code></pre></div><p>The new YAML removed the index rule <code>extended_tags</code>&rsquo;s binding.</p>
-<h2 id="delete-operation">Delete operation</h2>
-<p>Delete operation delete an index rule binding&rsquo;s schema.</p>
-<h3 id="examples-of-deleting">Examples of deleting</h3>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">bydbctl indexRuleBinding delete -g sw_stream -n stream_binding
-</code></pre></div><h2 id="list-operation">List operation</h2>
-<p>List operation list all index rule bindings in a group.</p>
-<h3 id="examples-of-listing">Examples of listing</h3>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">bydbctl indexRuleBinding list -g sw_stream
-</code></pre></div><h2 id="api-reference">API Reference</h2>
-<p><a href="../../api-reference#indexrulebindingregistryservice">indexRuleBindingService v1</a></p>
+</code></pre></div><h3 id="query-using-relative-time-duration">Query using relative time duration</h3>
+<p>The below command could query data in the last 30 minutes using relative time duration :</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">bydbctl stream query --start -30m -f - <span style="color:#d14">&lt;&lt;EOF
+</span><span style="color:#d14">groups: [&#34;stream-segment&#34;]
+</span><span style="color:#d14">name: &#34;segment&#34;
+</span><span style="color:#d14">projection:
+</span><span style="color:#d14">  tagFamilies:
+</span><span style="color:#d14">    - name: &#34;searchable&#34;
+</span><span style="color:#d14">      tags: [&#34;trace_id&#34;]
+</span><span style="color:#d14">EOF</span>
+</code></pre></div><h3 id="query-with-filter">Query with filter</h3>
+<p>The below command could query data with a filter where the service_id is <code>bW9ja19iX3NlcnZpY2U=.1</code>:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">bydbctl stream query -f - <span style="color:#d14">&lt;&lt;EOF
+</span><span style="color:#d14">name: &#34;segment&#34;
+</span><span style="color:#d14">groups: [&#34;stream-segment&#34;]
+</span><span style="color:#d14">projection:
+</span><span style="color:#d14">  tagFamilies:
+</span><span style="color:#d14">    - name: &#34;searchable&#34;
+</span><span style="color:#d14">      tags: [&#34;service_id&#34;, &#34;trace_id&#34;, &#34;latency&#34;]
+</span><span style="color:#d14">criteria:
+</span><span style="color:#d14">  condition:
+</span><span style="color:#d14">    name: &#34;service_id&#34;
+</span><span style="color:#d14">    op: &#34;BINARY_OP_EQ&#34;
+</span><span style="color:#d14">    value:
+</span><span style="color:#d14">      str:
+</span><span style="color:#d14">        value: &#34;bW9ja19iX3NlcnZpY2U=.1&#34;
+</span><span style="color:#d14">EOF</span>
+</code></pre></div><p>More filter operations can be found in <a href="../filter-operation">here</a>.</p>
+<h3 id="query-ordered-by-time-series">Query ordered by time-series</h3>
+<p>The below command could query data order by time-series in descending <a href="../../../../api-reference#sort">order</a> :</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">bydbctl stream query -f - <span style="color:#d14">&lt;&lt;EOF
+</span><span style="color:#d14">name: &#34;segment&#34;
+</span><span style="color:#d14">groups: [&#34;stream-segment&#34;]
+</span><span style="color:#d14">projection:
+</span><span style="color:#d14">  tagFamilies:
+</span><span style="color:#d14">    - name: &#34;searchable&#34;
+</span><span style="color:#d14">      tags: [&#34;trace_id&#34;, &#34;latency&#34;]
+</span><span style="color:#d14">    - name: &#34;storage-only&#34;
+</span><span style="color:#d14">      tags: [&#34;start_time&#34;, &#34;data_binary&#34;]
+</span><span style="color:#d14">orderBy:
+</span><span style="color:#d14">  sort: &#34;SORT_DESC&#34;
+</span><span style="color:#d14">EOF</span>
+</code></pre></div><h3 id="query-ordered-by-index-searchable-tag">Query ordered by index (searchable tag)</h3>
+<p>The below command could query data order by index in descending <a href="../../../../api-reference#sort">order</a> :</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">bydbctl stream query -f - <span style="color:#d14">&lt;&lt;EOF
+</span><span style="color:#d14">name: &#34;segment&#34;
+</span><span style="color:#d14">groups: [&#34;stream-segment&#34;]
+</span><span style="color:#d14">projection:
+</span><span style="color:#d14">  tagFamilies:
+</span><span style="color:#d14">    - name: &#34;searchable&#34;
+</span><span style="color:#d14">      tags: [&#34;trace_id&#34;, &#34;latency&#34;]
+</span><span style="color:#d14">    - name: &#34;storage-only&#34;
+</span><span style="color:#d14">      tags: [&#34;start_time&#34;, &#34;data_binary&#34;]
+</span><span style="color:#d14">orderBy:
+</span><span style="color:#d14">  indexRuleName: &#34;latency&#34;
+</span><span style="color:#d14">  sort: &#34;SORT_DESC&#34;
+</span><span style="color:#d14">EOF</span>
+</code></pre></div><h3 id="query-limit-result">Query limit result</h3>
+<p>The below command could query ordered data and return the first two results:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">bydbctl stream query -f - <span style="color:#d14">&lt;&lt;EOF
+</span><span style="color:#d14">name: &#34;segment&#34;
+</span><span style="color:#d14">groups: [&#34;stream-segment&#34;]
+</span><span style="color:#d14">projection:
+</span><span style="color:#d14">  tagFamilies:
+</span><span style="color:#d14">    - name: &#34;searchable&#34;
+</span><span style="color:#d14">      tags: [&#34;trace_id&#34;, &#34;latency&#34;]
+</span><span style="color:#d14">    - name: &#34;storage-only&#34;
+</span><span style="color:#d14">      tags: [&#34;start_time&#34;, &#34;data_binary&#34;]
+</span><span style="color:#d14">orderBy:
+</span><span style="color:#d14">  indexRuleName: &#34;latency&#34;
+</span><span style="color:#d14">  sort: &#34;SORT_DESC&#34;
+</span><span style="color:#d14">limit: 2
+</span><span style="color:#d14">offset: 0
+</span><span style="color:#d14">EOF</span>
+</code></pre></div><h3 id="more-examples-can-be-found-in-herehttpsgithubcomapacheskywalking-banyandbtreemaintestcasesstreamdatainput">More examples can be found in <a href="https://github.com/apache/skywalking-banyandb/tree/main/test/cases/stream/data/input">here</a>.</h3>
+<h2 id="api-reference">API Reference</h2>
+<p><a href="../../../../api-reference#streamservice">StreamService v1</a></p>
 
 
 
@@ -939,31 +1152,19 @@ segment which will generate a block every 2 hours.</p>
 
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#crud-indexrulebindings">CRUD IndexRuleBindings</a>
+    <li><a href="#query-streamsconceptdata-modelstreams">Query <a href="../../../../concept/data-model#streams">Streams</a></a>
       <ul>
-        <li><a href="#create-operation">Create operation</a>
+        <li><a href="#time-range">Time Range</a></li>
+        <li><a href="#understand-the-schema-you-are-querying">Understand the schema you are querying</a></li>
+        <li><a href="#examples">Examples</a>
           <ul>
-            <li><a href="#examples">Examples</a></li>
-          </ul>
-        </li>
-        <li><a href="#get-operation">Get operation</a>
-          <ul>
-            <li><a href="#examples-of-getting">Examples of getting</a></li>
-          </ul>
-        </li>
-        <li><a href="#update-operation">Update operation</a>
-          <ul>
-            <li><a href="#examples-updating">Examples updating</a></li>
-          </ul>
-        </li>
-        <li><a href="#delete-operation">Delete operation</a>
-          <ul>
-            <li><a href="#examples-of-deleting">Examples of deleting</a></li>
-          </ul>
-        </li>
-        <li><a href="#list-operation">List operation</a>
-          <ul>
-            <li><a href="#examples-of-listing">Examples of listing</a></li>
+            <li><a href="#query-between-specific-time-range">Query between specific time range</a></li>
+            <li><a href="#query-using-relative-time-duration">Query using relative time duration</a></li>
+            <li><a href="#query-with-filter">Query with filter</a></li>
+            <li><a href="#query-ordered-by-time-series">Query ordered by time-series</a></li>
+            <li><a href="#query-ordered-by-index-searchable-tag">Query ordered by index (searchable tag)</a></li>
+            <li><a href="#query-limit-result">Query limit result</a></li>
+            <li><a href="#more-examples-can-be-found-in-herehttpsgithubcomapacheskywalking-banyandbtreemaintestcasesstreamdatainput">More examples can be found in <a href="https://github.com/apache/skywalking-banyandb/tree/main/test/cases/stream/data/input">here</a>.</a></li>
           </ul>
         </li>
         <li><a href="#api-reference">API Reference</a></li>
@@ -1084,6 +1285,34 @@ segment which will generate a block every 2 hours.</p>
 
     </div>
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

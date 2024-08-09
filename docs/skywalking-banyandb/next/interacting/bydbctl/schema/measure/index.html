@@ -29,29 +29,29 @@
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
 
-<title>CRUD Measures | Apache SkyWalking</title><meta property="og:title" content="CRUD Measures" />
+<title>CRUD [Measures](../../../../concept/data-model#measures) | Apache SkyWalking</title><meta property="og:title" content="CRUD [Measures](../../../../concept/data-model#measures)" />
 <meta property="og:description" content="CRUD Measures CRUD operations create, read, update and delete measures.
 bydbctl is the command line tool in examples.
 Create operation Create operation adds a new measure to the database&rsquo;s metadata registry repository. If the measure does not currently exist, create operation will create the schema.
 Examples of creating A measure belongs to a unique group. We should create such a group with a catalog CATALOG_MEASURE before creating a measure.
 bydbctl group create -f - &lt;&lt;EOF metadata: name: sw_metric catalog: CATALOG_MEASURE resource_opts: shard_num: 2 segment_interval: unit: UNIT_DAY num: 1 ttl: unit: UNIT_DAY num: 7 EOF The group creates two shards to store data points." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/docs/skywalking-banyandb/next/crud/measure/schema/" />
+<meta property="og:url" content="/docs/skywalking-banyandb/next/interacting/bydbctl/schema/measure/" />
 
-<meta itemprop="name" content="CRUD Measures">
+<meta itemprop="name" content="CRUD [Measures](../../../../concept/data-model#measures)">
 <meta itemprop="description" content="CRUD Measures CRUD operations create, read, update and delete measures.
 bydbctl is the command line tool in examples.
 Create operation Create operation adds a new measure to the database&rsquo;s metadata registry repository. If the measure does not currently exist, create operation will create the schema.
 Examples of creating A measure belongs to a unique group. We should create such a group with a catalog CATALOG_MEASURE before creating a measure.
 bydbctl group create -f - &lt;&lt;EOF metadata: name: sw_metric catalog: CATALOG_MEASURE resource_opts: shard_num: 2 segment_interval: unit: UNIT_DAY num: 1 ttl: unit: UNIT_DAY num: 7 EOF The group creates two shards to store data points.">
 
-<meta itemprop="wordCount" content="298">
+<meta itemprop="wordCount" content="299">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="CRUD Measures"/>
+<meta name="twitter:title" content="CRUD [Measures](../../../../concept/data-model#measures)"/>
 <meta name="twitter:description" content="CRUD Measures CRUD operations create, read, update and delete measures.
 bydbctl is the command line tool in examples.
 Create operation Create operation adds a new measure to the database&rsquo;s metadata registry repository. If the measure does not currently exist, create operation will create the schema.
@@ -74,7 +74,7 @@ bydbctl group create -f - &lt;&lt;EOF metadata: name: sw_metric catalog: CATALOG
 
 
 
-    <title>CRUD Measures | Apache SkyWalking</title>
+    <title>CRUD [Measures](../../../../concept/data-model#measures) | Apache SkyWalking</title>
   </head>
   <body class="td-page  project-doc">
     <header>
@@ -428,41 +428,9 @@ bydbctl group create -f - &lt;&lt;EOF metadata: name: sw_metric catalog: CATALOG
 
     <li>
         
-            <a href="/docs/skywalking-banyandb/next/clients">Clients</a>
-        
-    </li>
-
-    
-
-    <li>
-        
-            <a href="">Insert and Update Data</a>
-        
-    </li>
-
-    
-
-    <li>
-        
-            <a href="">Querying Data</a>
-        
-    </li>
-
-    
-
-    <li>
-        
-            <a href="">Deleting Data</a>
-        
-    </li>
-
-    
-
-    <li>
-        
 
             
-            <a href="#">CRUD Operations<i class="iconfont icon-arrow-right pull-right"></i></a>
+            <a href="#">CLI<i class="iconfont icon-arrow-right pull-right"></i></a>
             
 
             
@@ -471,7 +439,7 @@ bydbctl group create -f - &lt;&lt;EOF metadata: name: sw_metric catalog: CATALOG
 
     <li>
         
-            <a href="/docs/skywalking-banyandb/next/crud/group">Group</a>
+            <a href="/docs/skywalking-banyandb/next/interacting/bydbctl/bydbctl">bydbctl</a>
         
     </li>
 
@@ -481,7 +449,7 @@ bydbctl group create -f - &lt;&lt;EOF metadata: name: sw_metric catalog: CATALOG
         
 
             
-            <a href="#">Measure<i class="iconfont icon-arrow-right pull-right"></i></a>
+            <a href="#">CRUD Schema<i class="iconfont icon-arrow-right pull-right"></i></a>
             
 
             
@@ -490,7 +458,7 @@ bydbctl group create -f - &lt;&lt;EOF metadata: name: sw_metric catalog: CATALOG
 
     <li>
         
-            <a href="/docs/skywalking-banyandb/next/crud/measure/schema">Schema</a>
+            <a href="/docs/skywalking-banyandb/next/interacting/bydbctl/schema/group">Group</a>
         
     </li>
 
@@ -498,7 +466,31 @@ bydbctl group create -f - &lt;&lt;EOF metadata: name: sw_metric catalog: CATALOG
 
     <li>
         
-            <a href="/docs/skywalking-banyandb/next/crud/measure/query">Query</a>
+            <a href="/docs/skywalking-banyandb/next/interacting/bydbctl/schema/measure">Measure</a>
+        
+    </li>
+
+    
+
+    <li>
+        
+            <a href="/docs/skywalking-banyandb/next/interacting/bydbctl/schema/stream">Stream</a>
+        
+    </li>
+
+    
+
+    <li>
+        
+            <a href="/docs/skywalking-banyandb/next/interacting/bydbctl/schema/index-rule">IndexRule</a>
+        
+    </li>
+
+    
+
+    <li>
+        
+            <a href="/docs/skywalking-banyandb/next/interacting/bydbctl/schema/index-rule-binding">IndexRuleBinding</a>
         
     </li>
 
@@ -515,7 +507,7 @@ bydbctl group create -f - &lt;&lt;EOF metadata: name: sw_metric catalog: CATALOG
         
 
             
-            <a href="#">Stream<i class="iconfont icon-arrow-right pull-right"></i></a>
+            <a href="#">Querying Data<i class="iconfont icon-arrow-right pull-right"></i></a>
             
 
             
@@ -524,7 +516,7 @@ bydbctl group create -f - &lt;&lt;EOF metadata: name: sw_metric catalog: CATALOG
 
     <li>
         
-            <a href="/docs/skywalking-banyandb/next/crud/stream/schema">Schema</a>
+            <a href="/docs/skywalking-banyandb/next/interacting/bydbctl/query/measure">Measure</a>
         
     </li>
 
@@ -532,7 +524,15 @@ bydbctl group create -f - &lt;&lt;EOF metadata: name: sw_metric catalog: CATALOG
 
     <li>
         
-            <a href="/docs/skywalking-banyandb/next/crud/stream/query">Query</a>
+            <a href="/docs/skywalking-banyandb/next/interacting/bydbctl/query/stream">Stream</a>
+        
+    </li>
+
+    
+
+    <li>
+        
+            <a href="/docs/skywalking-banyandb/next/interacting/bydbctl/query/filter-operation">Filter Operation</a>
         
     </li>
 
@@ -547,7 +547,14 @@ bydbctl group create -f - &lt;&lt;EOF metadata: name: sw_metric catalog: CATALOG
 
     <li>
         
-            <a href="/docs/skywalking-banyandb/next/crud/index_rule">IndexRule</a>
+            <a href="/docs/skywalking-banyandb/next/interacting/bydbctl/property">CRUD Property</a>
+        
+    </li>
+
+    
+
+</ul>
+
         
     </li>
 
@@ -555,7 +562,7 @@ bydbctl group create -f - &lt;&lt;EOF metadata: name: sw_metric catalog: CATALOG
 
     <li>
         
-            <a href="/docs/skywalking-banyandb/next/crud/index_rule_binding">IndexRuleBinding</a>
+            <a href="/docs/skywalking-banyandb/next/interacting/java-client">Java Client</a>
         
     </li>
 
@@ -563,7 +570,142 @@ bydbctl group create -f - &lt;&lt;EOF metadata: name: sw_metric catalog: CATALOG
 
     <li>
         
-            <a href="/docs/skywalking-banyandb/next/crud/property">Property</a>
+
+            
+            <a href="/docs/skywalking-banyandb/next/interacting/web-ui">Web UI<i class="iconfont icon-arrow-right pull-right"></i></a>
+            
+
+            
+<ul class="sidebar-submenu">
+    
+
+    <li>
+        
+            <a href="/docs/skywalking-banyandb/next/interacting/web-ui/dashboard">Dashboard</a>
+        
+    </li>
+
+    
+
+    <li>
+        
+
+            
+            <a href="#">CRUD Schema<i class="iconfont icon-arrow-right pull-right"></i></a>
+            
+
+            
+<ul class="sidebar-submenu">
+    
+
+    <li>
+        
+            <a href="/docs/skywalking-banyandb/next/interacting/web-ui/schema/group">Group</a>
+        
+    </li>
+
+    
+
+    <li>
+        
+            <a href="/docs/skywalking-banyandb/next/interacting/web-ui/schema/measure">Measure</a>
+        
+    </li>
+
+    
+
+    <li>
+        
+            <a href="/docs/skywalking-banyandb/next/interacting/web-ui/schema/stream">Stream</a>
+        
+    </li>
+
+    
+
+    <li>
+        
+            <a href="/docs/skywalking-banyandb/next/interacting/web-ui/schema/index-rule">IndexRule</a>
+        
+    </li>
+
+    
+
+    <li>
+        
+            <a href="/docs/skywalking-banyandb/next/interacting/web-ui/schema/index-rule-binding">IndexRuleBinding</a>
+        
+    </li>
+
+    
+
+    <li>
+        
+            <a href="/docs/skywalking-banyandb/next/interacting/web-ui/schema/top-n-aggregation">Top N Aggregation</a>
+        
+    </li>
+
+    
+
+</ul>
+
+        
+    </li>
+
+    
+
+    <li>
+        
+
+            
+            <a href="#">Querying Data<i class="iconfont icon-arrow-right pull-right"></i></a>
+            
+
+            
+<ul class="sidebar-submenu">
+    
+
+    <li>
+        
+            <a href="/docs/skywalking-banyandb/next/interacting/web-ui/query/measure">Measure</a>
+        
+    </li>
+
+    
+
+    <li>
+        
+            <a href="/docs/skywalking-banyandb/next/interacting/web-ui/query/stream">Stream</a>
+        
+    </li>
+
+    
+
+</ul>
+
+        
+    </li>
+
+    
+
+    <li>
+        
+            <a href="/docs/skywalking-banyandb/next/interacting/web-ui/property">CRUD Property</a>
+        
+    </li>
+
+    
+
+    <li>
+        
+            <a href="/docs/skywalking-banyandb/next/interacting/java-client">Java Client</a>
+        
+    </li>
+
+    
+
+    <li>
+        
+            <a href="">Web UI</a>
         
     </li>
 
@@ -788,7 +930,7 @@ bydbctl group create -f - &lt;&lt;EOF metadata: name: sw_metric catalog: CATALOG
   })()
 </script>
 
-                  <div class="commit-id">Commit Id: f354d0a</div>
+                  <div class="commit-id">Commit Id: 4588b55</div>
                 
 
 
@@ -812,9 +954,9 @@ bydbctl group create -f - &lt;&lt;EOF metadata: name: sw_metric catalog: CATALOG
 
 
 
-	<h1 id="crud-measures">CRUD Measures</h1>
+	<h1 id="crud-measuresconceptdata-modelmeasures">CRUD <a href="../../../../concept/data-model#measures">Measures</a></h1>
 <p>CRUD operations create, read, update and delete measures.</p>
-<p><a href="../../../clients#command-line"><code>bydbctl</code></a> is the command line tool in examples.</p>
+<p><a href="../../bydbctl">bydbctl</a> is the command line tool in examples.</p>
 <h2 id="create-operation">Create operation</h2>
 <p>Create operation adds a new measure to the database&rsquo;s metadata registry repository. If the measure does not currently exist, create operation will create the schema.</p>
 <h3 id="examples-of-creating">Examples of creating</h3>
@@ -892,7 +1034,7 @@ segment that will generate a block every 2 hours.</p>
 <h3 id="examples-of-listing">Examples of listing</h3>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">bydbctl measure list -g sw_metric
 </code></pre></div><h2 id="api-reference">API Reference</h2>
-<p><a href="../../../api-reference#measureservice">MeasureService v1</a></p>
+<p><a href="../../../../api-reference#measureregistryservice">Measure Registration Operations</a></p>
 
 
 
@@ -928,7 +1070,7 @@ segment that will generate a block every 2 hours.</p>
 
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#crud-measures">CRUD Measures</a>
+    <li><a href="#crud-measuresconceptdata-modelmeasures">CRUD <a href="../../../../concept/data-model#measures">Measures</a></a>
       <ul>
         <li><a href="#create-operation">Create operation</a>
           <ul>
@@ -1073,6 +1215,34 @@ segment that will generate a block every 2 hours.</p>
 
     </div>
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

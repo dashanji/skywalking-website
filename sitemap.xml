@@ -5532,6 +5532,12 @@
   </url>
   
   <url>
+    <loc>/docs/skywalking-banyandb/next/interacting/bydbctl/bydbctl/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>/docs/skywalking-java/latest/en/setup/service-agent/java-agent/configuration-discovery/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -6367,25 +6373,97 @@
   </url>
   
   <url>
+    <loc>/docs/skywalking-banyandb/next/interacting/bydbctl/schema/group/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/docs/skywalking-banyandb/next/interacting/web-ui/schema/group/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/docs/skywalking-banyandb/next/interacting/bydbctl/schema/index-rule-binding/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/docs/skywalking-banyandb/next/interacting/web-ui/schema/index-rule-binding/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/docs/skywalking-banyandb/next/interacting/bydbctl/schema/index-rule/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/docs/skywalking-banyandb/next/interacting/web-ui/schema/index-rule/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/docs/skywalking-banyandb/next/interacting/bydbctl/schema/measure/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/docs/skywalking-banyandb/next/interacting/web-ui/schema/measure/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/docs/skywalking-banyandb/next/interacting/bydbctl/property/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/docs/skywalking-banyandb/next/interacting/web-ui/property/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/docs/skywalking-banyandb/next/interacting/bydbctl/schema/stream/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/docs/skywalking-banyandb/next/interacting/web-ui/schema/stream/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/docs/skywalking-banyandb/next/interacting/bydbctl/schema/top-n-aggregation/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/docs/skywalking-banyandb/next/interacting/web-ui/schema/top-n-aggregation/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>/docs/skywalking-banyandb/latest/crud/group/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/docs/skywalking-banyandb/next/crud/group/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>/docs/skywalking-banyandb/v0.5.0/crud/group/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>/docs/skywalking-banyandb/next/crud/index_rule_binding/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -6409,12 +6487,6 @@
   </url>
   
   <url>
-    <loc>/docs/skywalking-banyandb/next/crud/index_rule/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>/docs/skywalking-banyandb/v0.5.0/crud/index_rule/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -6422,12 +6494,6 @@
   
   <url>
     <loc>/docs/skywalking-banyandb/latest/crud/measure/schema/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>/docs/skywalking-banyandb/next/crud/measure/schema/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -6445,12 +6511,6 @@
   </url>
   
   <url>
-    <loc>/docs/skywalking-banyandb/next/crud/property/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>/docs/skywalking-banyandb/v0.5.0/crud/property/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -6458,12 +6518,6 @@
   
   <url>
     <loc>/docs/skywalking-banyandb/latest/crud/stream/schema/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>/docs/skywalking-banyandb/next/crud/stream/schema/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -6488,6 +6542,12 @@
   
   <url>
     <loc>/docs/skywalking-swck/v0.8.0/custom-metrics-adapter/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/docs/skywalking-banyandb/next/interacting/web-ui/dashboard/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -8260,6 +8320,12 @@
   </url>
   
   <url>
+    <loc>/docs/skywalking-banyandb/next/interacting/bydbctl/query/filter-operation/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>/docs/skywalking-satellite/latest/en/setup/plugins/forwarder_envoy-als-v2-grpc-forwarder/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -9845,6 +9911,12 @@
   
   <url>
     <loc>/docs/skywalking-swck/v0.8.0/examples/java-agent-injector-usage/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/docs/skywalking-banyandb/next/interacting/java-client/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -13432,13 +13504,31 @@
   </url>
   
   <url>
-    <loc>/docs/skywalking-banyandb/latest/crud/measure/query/</loc>
+    <loc>/docs/skywalking-banyandb/next/interacting/bydbctl/query/measure/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/docs/skywalking-banyandb/next/crud/measure/query/</loc>
+    <loc>/docs/skywalking-banyandb/next/interacting/web-ui/query/measure/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/docs/skywalking-banyandb/next/interacting/bydbctl/query/stream/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/docs/skywalking-banyandb/next/interacting/web-ui/query/stream/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/docs/skywalking-banyandb/latest/crud/measure/query/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -13511,12 +13601,6 @@
   
   <url>
     <loc>/docs/skywalking-banyandb/latest/crud/stream/query/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>/docs/skywalking-banyandb/next/crud/stream/query/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
