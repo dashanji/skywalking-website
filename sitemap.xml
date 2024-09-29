@@ -10720,6 +10720,12 @@
   </url>
   
   <url>
+    <loc>/docs/skywalking-go/next/en/advanced-features/manual-apis/toolkit-log/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>/docs/skywalking-go/latest/en/advanced-features/logging-setup/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -11117,6 +11123,12 @@
   
   <url>
     <loc>/docs/main/v9.7.0/en/concepts-and-designs/meter/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/docs/skywalking-go/next/en/advanced-features/manual-apis/toolkit-metric/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
