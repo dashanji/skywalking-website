@@ -4925,12 +4925,6 @@
   </url>
   
   <url>
-    <loc>/docs/main/next/en/setup/backend/backend-async-profiler/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>/docs/main/latest/en/setup/backend/backend-aws-api-gateway-monitoring/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -9971,6 +9965,12 @@
   
   <url>
     <loc>/docs/main/next/en/setup/backend/dashboards-so11y-java-agent/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/docs/main/next/en/setup/backend/backend-java-app-profiling/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
