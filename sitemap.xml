@@ -12214,12 +12214,6 @@
   </url>
   
   <url>
-    <loc>/docs/skywalking-java/next/en/setup/service-agent/java-agent/agent-optional-plugins/oracle-resin-plugins/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>/docs/skywalking-java/v8.14.0/en/setup/service-agent/java-agent/agent-optional-plugins/oracle-resin-plugins/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -16049,6 +16043,12 @@
   </url>
   
   <url>
+    <loc>/docs/skywalking-java/next/en/setup/service-agent/java-agent/agent-optional-plugins/spring-gateway/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>/docs/main/v9.0.0/en/setup/backend/spring-sleuth-setup/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -16319,12 +16319,6 @@
   </url>
   
   <url>
-    <loc>/docs/skywalking-java/next/en/setup/service-agent/java-agent/agent-optional-plugins/trace-ignore-plugin/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>/docs/skywalking-java/v8.14.0/en/setup/service-agent/java-agent/agent-optional-plugins/trace-ignore-plugin/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -16350,6 +16344,12 @@
   
   <url>
     <loc>/docs/skywalking-java/v9.1.0/en/setup/service-agent/java-agent/agent-optional-plugins/trace-ignore-plugin/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/docs/skywalking-java/next/en/setup/service-agent/java-agent/agent-optional-plugins/trace-ignore-plugin/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
