@@ -14314,6 +14314,12 @@
   </url>
   
   <url>
+    <loc>/docs/skywalking-banyandb/next/operation/restore/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>/docs/main/next/en/setup/backend/backend-rocketmq-monitoring/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
