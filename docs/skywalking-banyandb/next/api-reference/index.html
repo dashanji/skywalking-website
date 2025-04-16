@@ -75,7 +75,7 @@ Table of Contents   banyandb/model/v1/write.proto
   GetAPIVersionRequest
   GetAPIVersionResponse">
 
-<meta itemprop="wordCount" content="5236">
+<meta itemprop="wordCount" content="5230">
 
 
 
@@ -1013,7 +1013,7 @@ Table of Contents   banyandb/model/v1/write.proto
   })()
 </script>
 
-                  <div class="commit-id">Commit Id: 9312caa</div>
+                  <div class="commit-id">Commit Id: 9275294</div>
                 
 
 
@@ -2111,10 +2111,10 @@ Table of Contents   banyandb/model/v1/write.proto
 <td>stages defines the ordered lifecycle stages. Data progresses through these stages sequentially.</td>
 </tr>
 <tr>
-<td>default_node_selector</td>
+<td>default_stages</td>
 <td><a href="#string">string</a></td>
-<td></td>
-<td>default_node_selector is the default node selector for queries if node_selector is not specified</td>
+<td>repeated</td>
+<td>default_stages is the name of the default stage</td>
 </tr>
 </tbody>
 </table>
@@ -6106,10 +6106,10 @@ to control how to generate time series indices.</p>
 <td>trace is used to enable trace for the query</td>
 </tr>
 <tr>
-<td>node_selector</td>
+<td>stages</td>
 <td><a href="#string">string</a></td>
-<td></td>
-<td>node_selector is used to specify the target node for the query</td>
+<td>repeated</td>
+<td>stages is used to specify the stage of the data points in the lifecycle</td>
 </tr>
 </tbody>
 </table>
@@ -6940,12 +6940,6 @@ to control how to generate time series indices.</p>
 <td></td>
 <td>trace is used to enable trace for the query</td>
 </tr>
-<tr>
-<td>node_selector</td>
-<td><a href="#string">string</a></td>
-<td></td>
-<td>node_selector is used to select the node to query</td>
-</tr>
 </tbody>
 </table>
 <p><a name="banyandb-property-v1-QueryResponse"></a></p>
@@ -7141,10 +7135,10 @@ to control how to generate time series indices.</p>
 <td>trace is used to enable trace for the query</td>
 </tr>
 <tr>
-<td>node_selector</td>
+<td>stages</td>
 <td><a href="#string">string</a></td>
-<td></td>
-<td>node_selector is used to select the node to query</td>
+<td>repeated</td>
+<td>stage is used to specify the stage of the query in the lifecycle</td>
 </tr>
 </tbody>
 </table>
@@ -8011,6 +8005,8 @@ to control how to generate time series indices.</p>
 
     </div>
     
+
+
 
 
 
