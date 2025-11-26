@@ -5544,6 +5544,12 @@
   </url>
   
   <url>
+    <loc>/docs/skywalking-banyandb/next/operation/mcp/build/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>/docs/skywalking-go/latest/en/development-and-contribution/build-and-use-agent/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -15377,6 +15383,12 @@
   </url>
   
   <url>
+    <loc>/docs/skywalking-banyandb/next/operation/mcp/setup/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>/docs/skywalking-php/latest/en/setup/service-agent/php-agent/readme/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -16783,6 +16795,12 @@
   
   <url>
     <loc>/docs/main/v9.7.0/en/setup/backend/backend-telemetry/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/docs/skywalking-banyandb/next/operation/mcp/inspector/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
