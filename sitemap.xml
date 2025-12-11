@@ -8446,6 +8446,12 @@
   </url>
   
   <url>
+    <loc>/docs/skywalking-banyandb/next/operation/fodc/overview/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>/docs/main/next/en/setup/backend/backend-flink-monitoring/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -18200,6 +18206,12 @@
   
   <url>
     <loc>/docs/main/v9.7.0/en/setup/service-agent/virtual-mq/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/docs/skywalking-banyandb/next/design/fodc/watchdog-and-flight-recoder/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
