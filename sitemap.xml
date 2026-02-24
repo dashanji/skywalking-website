@@ -5357,6 +5357,12 @@
   </url>
   
   <url>
+    <loc>/docs/main/next/en/guides/benchmark/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>/blog/</loc>
     <lastmod>2024-03-22T00:20:00+00:00</lastmod>
     <changefreq>daily</changefreq>
@@ -10109,12 +10115,6 @@
   
   <url>
     <loc>/docs/main/latest/en/guides/benchmark/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>/docs/main/next/en/guides/benchmark/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
