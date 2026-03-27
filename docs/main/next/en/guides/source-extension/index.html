@@ -29,28 +29,25 @@
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
 
-<title>Source and scope extension for new metrics | Apache SkyWalking</title><meta property="og:title" content="Source and scope extension for new metrics" />
-<meta property="og:description" content="Source and scope extension for new metrics From the OAL scope introduction, you should already have understood what a scope is. If you would like to create more extensions, you need to have a deeper understanding of what a source is.
-Source and scope are interrelated concepts. Scope declares the ID (int) and name, while source declares the attributes. Follow these steps to create a new source and sccope.
- In the OAP core module, it provides SourceReceiver internal services." />
+<title>OAL Extension： Source and Scope for New Metrics | Apache SkyWalking</title><meta property="og:title" content="OAL Extension： Source and Scope for New Metrics" />
+<meta property="og:description" content="OAL Extension: Source and Scope for New Metrics From the OAL scope introduction, you should already have understood what a scope is. If you would like to create more extensions, you need to have a deeper understanding of what a source is.
+Source and scope are interrelated concepts. Scope declares the ID (int) and name, while source declares the attributes. Follow these steps to create a new source and sccope." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/docs/main/next/en/guides/source-extension/" />
 
-<meta itemprop="name" content="Source and scope extension for new metrics">
-<meta itemprop="description" content="Source and scope extension for new metrics From the OAL scope introduction, you should already have understood what a scope is. If you would like to create more extensions, you need to have a deeper understanding of what a source is.
-Source and scope are interrelated concepts. Scope declares the ID (int) and name, while source declares the attributes. Follow these steps to create a new source and sccope.
- In the OAP core module, it provides SourceReceiver internal services.">
+<meta itemprop="name" content="OAL Extension： Source and Scope for New Metrics">
+<meta itemprop="description" content="OAL Extension: Source and Scope for New Metrics From the OAL scope introduction, you should already have understood what a scope is. If you would like to create more extensions, you need to have a deeper understanding of what a source is.
+Source and scope are interrelated concepts. Scope declares the ID (int) and name, while source declares the attributes. Follow these steps to create a new source and sccope.">
 
-<meta itemprop="wordCount" content="453">
+<meta itemprop="wordCount" content="454">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Source and scope extension for new metrics"/>
-<meta name="twitter:description" content="Source and scope extension for new metrics From the OAL scope introduction, you should already have understood what a scope is. If you would like to create more extensions, you need to have a deeper understanding of what a source is.
-Source and scope are interrelated concepts. Scope declares the ID (int) and name, while source declares the attributes. Follow these steps to create a new source and sccope.
- In the OAP core module, it provides SourceReceiver internal services."/>
+<meta name="twitter:title" content="OAL Extension： Source and Scope for New Metrics"/>
+<meta name="twitter:description" content="OAL Extension: Source and Scope for New Metrics From the OAL scope introduction, you should already have understood what a scope is. If you would like to create more extensions, you need to have a deeper understanding of what a source is.
+Source and scope are interrelated concepts. Scope declares the ID (int) and name, while source declares the attributes. Follow these steps to create a new source and sccope."/>
 
 
 
@@ -68,7 +65,7 @@ Source and scope are interrelated concepts. Scope declares the ID (int) and name
 
 
 
-    <title>Source and scope extension for new metrics | Apache SkyWalking</title>
+    <title>OAL Extension： Source and Scope for New Metrics | Apache SkyWalking</title>
   </head>
   <body class="td-page  project-doc">
     <header>
@@ -445,6 +442,14 @@ Source and scope are interrelated concepts. Scope declares the ID (int) and name
     <li>
         
             <a href="/docs/main/next/en/setup/backend/backend-k8s">Run with Kubernetes</a>
+        
+    </li>
+
+    
+
+    <li>
+        
+            <a href="/docs/main/next/en/setup/backend/graalvm-distro">GraalVM Native Image Distribution</a>
         
     </li>
 
@@ -946,6 +951,32 @@ Source and scope are interrelated concepts. Scope declares the ID (int) and name
     <li>
         
             <a href="/docs/main/next/en/setup/backend/backend-flink-monitoring">Flink</a>
+        
+    </li>
+
+    
+
+</ul>
+
+        
+    </li>
+
+    
+
+    <li>
+        
+
+            
+            <a href="#">GenAI<i class="iconfont icon-arrow-right pull-right"></i></a>
+            
+
+            
+<ul class="sidebar-submenu">
+    
+
+    <li>
+        
+            <a href="/docs/main/next/en/setup/service-agent/virtual-genai">Virtual GenAI</a>
         
     </li>
 
@@ -2306,7 +2337,23 @@ Source and scope are interrelated concepts. Scope declares the ID (int) and name
 
     <li>
         
-            <a href="/docs/main/next/en/guides/source-extension">Extend An OAL Source</a>
+            <a href="/docs/main/next/en/guides/source-extension">OAL Source and Scope Extension</a>
+        
+    </li>
+
+    
+
+    <li>
+        
+            <a href="/docs/main/next/en/guides/mal-extension">MAL Extension Functions</a>
+        
+    </li>
+
+    
+
+    <li>
+        
+            <a href="/docs/main/next/en/guides/lal-extension">LAL Custom Input/Output Types</a>
         
     </li>
 
@@ -2718,7 +2765,7 @@ Source and scope are interrelated concepts. Scope declares the ID (int) and name
   })()
 </script>
 
-                  <div class="commit-id">Commit Id: 35caa97</div>
+                  <div class="commit-id">Commit Id: 5be7e79</div>
                 
 
 
@@ -2777,7 +2824,7 @@ Source and scope are interrelated concepts. Scope declares the ID (int) and name
 
 
 
-	<h1 id="source-and-scope-extension-for-new-metrics">Source and scope extension for new metrics</h1>
+	<h1 id="oal-extension-source-and-scope-for-new-metrics">OAL Extension: Source and Scope for New Metrics</h1>
 <p>From the <a href="../../concepts-and-designs/oal#from">OAL scope introduction</a>, you should already have understood what a scope is.
 If you would like to create more extensions, you need to have a deeper understanding of what a <strong>source</strong> is.</p>
 <p><strong>Source</strong> and <strong>scope</strong> are interrelated concepts. <strong>Scope</strong> declares the ID (int) and name, while <strong>source</strong> declares the attributes.
@@ -2987,6 +3034,16 @@ All these fields are detected by OAL Runtime, and are required during query.</p>
 
     </div>
     
+
+
+
+
+
+
+
+
+
+
 
 
 
