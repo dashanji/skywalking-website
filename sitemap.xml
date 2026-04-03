@@ -6559,6 +6559,12 @@
   </url>
   
   <url>
+    <loc>/docs/skywalking-banyandb/next/interacting/bydbctl/schema/trace/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>/docs/skywalking-banyandb/latest/crud/group/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -13847,6 +13853,12 @@
   
   <url>
     <loc>/docs/skywalking-banyandb/next/interacting/bydbctl/query/top-n-aggregation/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/docs/skywalking-banyandb/next/interacting/bydbctl/query/trace/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
