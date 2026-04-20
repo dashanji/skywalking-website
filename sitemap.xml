@@ -10072,6 +10072,12 @@
   </url>
   
   <url>
+    <loc>/docs/main/next/en/setup/backend/backend-ios-monitoring/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>/docs/main/latest/en/setup/backend/backend-ip-port/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -16764,6 +16770,12 @@
   
   <url>
     <loc>/docs/main/next/en/swip/swip-11/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/docs/main/next/en/swip/swip-12/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
