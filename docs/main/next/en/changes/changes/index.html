@@ -37,7 +37,7 @@
 <meta itemprop="name" content="11.0.0">
 <meta itemprop="description" content="11.0.0 Project  New queryAlarms GraphQL query — entity / layer / rule filters for alarms. Adds a comprehensive alarm query API alongside the legacy getAlarm. The new queryAlarms(condition: AlarmQueryCondition!): Alarms accepts a single input type bundling every filter the alarm record stores: entities: [Entity!] (reuses the MQE Entity shape — pin to specific services / instances / endpoints / processes or their relations, matched against alarm id0 OR id1); layer: String (filter by the alarmed entity&rsquo;s layer — single match, since alarm rows persist one layer); ruleNames: [String!">
 
-<meta itemprop="wordCount" content="3893">
+<meta itemprop="wordCount" content="3896">
 
 
 
@@ -2901,7 +2901,7 @@
   })()
 </script>
 
-                  <div class="commit-id">Commit Id: 1ad850f</div>
+                  <div class="commit-id">Commit Id: 658832e</div>
                 
 
 
@@ -3255,6 +3255,7 @@ Test additions: add unit tests for 21 JDBC query DAOs verifying SQL/WHERE clause
 <li>Update LAL documentation with <code>sourceAttribute()</code> function and <code>layer: auto</code> mode.</li>
 <li>Add iOS app monitoring setup documentation.</li>
 <li>Add WeChat / Alipay Mini Program monitoring setup documentation, plus a client-side-monitoring section in the security guide covering public-internet ingress (OTLP + <code>/v3/segments</code>) for mobile / browser / mini-program SDKs.</li>
+<li>Improve downsampling documentation</li>
 </ul>
 <p>All issues and pull requests are <a href="https://github.com/apache/skywalking/issues?q=milestone:11.0.0">here</a></p>
 
