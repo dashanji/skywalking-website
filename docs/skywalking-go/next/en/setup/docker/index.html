@@ -41,7 +41,7 @@ Customized Dockerfile Using the SkyWalking Go provided image as the base image, 
 Customized Dockerfile Using the SkyWalking Go provided image as the base image, perform file copying and other operations in the Dockerfile.
 # import the skywalking go base imageFROMapache/skywalking-go:&lt;version&gt;-go&lt;go version&gt;# Copy application codeCOPY /path/to/project /path/to/project# Inject the agent into the project or get dependencies by application selfRUN skywalking-go-agent -inject /path/to/project# Building the project including the agentRUN go build -toolexec=&#34;skywalking-go-agent&#34; -a /path/to/project# More operations.">
 
-<meta itemprop="wordCount" content="144">
+<meta itemprop="wordCount" content="142">
 
 
 
@@ -573,7 +573,7 @@ Customized Dockerfile Using the SkyWalking Go provided image as the base image, 
   })()
 </script>
 
-                  <div class="commit-id">Commit Id: dceeb56</div>
+                  <div class="commit-id">Commit Id: 19a9fa9</div>
                 
 
 
@@ -630,7 +630,7 @@ Customized Dockerfile Using the SkyWalking Go provided image as the base image, 
 </span><span style="color:#a61717;background-color:#e3d2d2"></span>...<span style="color:#a61717;background-color:#e3d2d2">
 </span></code></pre></div><p>In the above code, we have performed the following actions:</p>
 <ol>
-<li>Used the SkyWalking Go provided image as the base image, which currently supports the following Go versions: <strong>1.19, 1.20, 1.21, 1.22, 1.23</strong>.</li>
+<li>Used the SkyWalking Go provided image as the base image, which currently supports the following Go versions: <strong>1.24, 1.25, 1.26</strong>.</li>
 <li>Copied the project into the Docker image.</li>
 <li>Installed SkyWalking Go and compiled the project, <a href="./../gobuild">read this documentation for more detail</a>.
 The SkyWalking Go agent is already installed in the <code>/usr/local/bin</code> directory with the name <strong>skywalking-go-agent</strong>.</li>
