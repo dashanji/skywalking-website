@@ -30,21 +30,21 @@
 <meta name="theme-color" content="#ffffff">
 
 <title>11.0.0 | Apache SkyWalking</title><meta property="og:title" content="11.0.0" />
-<meta property="og:description" content="11.0.0 Project  New queryAlarms GraphQL query — entity / layer / rule filters for alarms. Adds a comprehensive alarm query API alongside the legacy getAlarm. The new queryAlarms(condition: AlarmQueryCondition!): Alarms accepts a single input type bundling every filter the alarm record stores: entities: [Entity!] (reuses the MQE Entity shape — pin to specific services / instances / endpoints / processes or their relations, matched against alarm id0 OR id1); layer: String (filter by the alarmed entity&rsquo;s layer — single match, since alarm rows persist one layer); ruleNames: [String!" />
+<meta property="og:description" content="11.0.0 Project  Remove the always-on alarm-to-event conversion (EventHookCallback). A triggered alarm is no longer synthesized into the events pipeline as an Alarm/AlarmRecovery event; events now originate only from real event sources (agents, SkyWalking CLI, Kubernetes Event Exporter). Alarms remain available through the alarm store (getAlarm/queryAlarms) and the configured alarm hooks. This drops a documented &ldquo;Known Event&rdquo; and removes 1-2 synthetic event records per alarm fire. New queryAlarms GraphQL query — entity / layer / rule filters for alarms." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/docs/main/next/en/changes/changes/" />
 
 <meta itemprop="name" content="11.0.0">
-<meta itemprop="description" content="11.0.0 Project  New queryAlarms GraphQL query — entity / layer / rule filters for alarms. Adds a comprehensive alarm query API alongside the legacy getAlarm. The new queryAlarms(condition: AlarmQueryCondition!): Alarms accepts a single input type bundling every filter the alarm record stores: entities: [Entity!] (reuses the MQE Entity shape — pin to specific services / instances / endpoints / processes or their relations, matched against alarm id0 OR id1); layer: String (filter by the alarmed entity&rsquo;s layer — single match, since alarm rows persist one layer); ruleNames: [String!">
+<meta itemprop="description" content="11.0.0 Project  Remove the always-on alarm-to-event conversion (EventHookCallback). A triggered alarm is no longer synthesized into the events pipeline as an Alarm/AlarmRecovery event; events now originate only from real event sources (agents, SkyWalking CLI, Kubernetes Event Exporter). Alarms remain available through the alarm store (getAlarm/queryAlarms) and the configured alarm hooks. This drops a documented &ldquo;Known Event&rdquo; and removes 1-2 synthetic event records per alarm fire. New queryAlarms GraphQL query — entity / layer / rule filters for alarms.">
 
-<meta itemprop="wordCount" content="6234">
+<meta itemprop="wordCount" content="6297">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="11.0.0"/>
-<meta name="twitter:description" content="11.0.0 Project  New queryAlarms GraphQL query — entity / layer / rule filters for alarms. Adds a comprehensive alarm query API alongside the legacy getAlarm. The new queryAlarms(condition: AlarmQueryCondition!): Alarms accepts a single input type bundling every filter the alarm record stores: entities: [Entity!] (reuses the MQE Entity shape — pin to specific services / instances / endpoints / processes or their relations, matched against alarm id0 OR id1); layer: String (filter by the alarmed entity&rsquo;s layer — single match, since alarm rows persist one layer); ruleNames: [String!"/>
+<meta name="twitter:description" content="11.0.0 Project  Remove the always-on alarm-to-event conversion (EventHookCallback). A triggered alarm is no longer synthesized into the events pipeline as an Alarm/AlarmRecovery event; events now originate only from real event sources (agents, SkyWalking CLI, Kubernetes Event Exporter). Alarms remain available through the alarm store (getAlarm/queryAlarms) and the configured alarm hooks. This drops a documented &ldquo;Known Event&rdquo; and removes 1-2 synthetic event records per alarm fire. New queryAlarms GraphQL query — entity / layer / rule filters for alarms."/>
 
 
 
@@ -2927,7 +2927,7 @@
   })()
 </script>
 
-                  <div class="commit-id">Commit Id: 799bb76</div>
+                  <div class="commit-id">Commit Id: f409ed7</div>
                 
 
 
@@ -2989,6 +2989,7 @@
 	<h2 id="1100">11.0.0</h2>
 <h4 id="project">Project</h4>
 <ul>
+<li>Remove the always-on alarm-to-event conversion (<code>EventHookCallback</code>). A triggered alarm is no longer synthesized into the events pipeline as an <code>Alarm</code>/<code>AlarmRecovery</code> event; events now originate only from real event sources (agents, SkyWalking CLI, Kubernetes Event Exporter). Alarms remain available through the alarm store (<code>getAlarm</code>/<code>queryAlarms</code>) and the configured alarm hooks. This drops a documented &ldquo;Known Event&rdquo; and removes 1-2 synthetic event records per alarm fire.</li>
 <li><strong>New <code>queryAlarms</code> GraphQL query — entity / layer / rule filters for alarms.</strong> Adds
 a comprehensive alarm query API alongside the legacy <code>getAlarm</code>. The new
 <code>queryAlarms(condition: AlarmQueryCondition!): Alarms</code> accepts a single input type
