@@ -5381,6 +5381,12 @@
   </url>
   
   <url>
+    <loc>/docs/skywalking-banyandb/next/design/post-trace-pipeline/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>/docs/main/next/en/guides/benchmark/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -12695,6 +12701,12 @@
   
   <url>
     <loc>/docs/skywalking-banyandb/v0.5.0/concept/persistence-storage/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/docs/main/next/en/setup/backend/dashboards-php-runtime/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
