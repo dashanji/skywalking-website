@@ -6763,6 +6763,12 @@
   </url>
   
   <url>
+    <loc>/docs/skywalking-banyandb/next/operation/plugins-debugging/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>/docs/main/next/en/concepts-and-designs/service-hierarchy-configuration/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -7274,6 +7280,12 @@
   
   <url>
     <loc>/docs/skywalking-rover/v0.5.0/en/setup/examples/cases/kubernetes-process/readme/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/docs/skywalking-banyandb/next/operation/plugins-development/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -17641,6 +17653,12 @@
   
   <url>
     <loc>/docs/main/v9.7.0/en/setup/backend/trace-sampling/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/docs/skywalking-banyandb/next/operation/plugins/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
