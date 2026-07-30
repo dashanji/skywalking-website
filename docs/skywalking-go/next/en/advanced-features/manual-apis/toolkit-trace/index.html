@@ -41,7 +41,7 @@ When creating an Entry Span, you need to obtain the context carrier from the req
 import &#34;github.com/apache/skywalking-go/toolkit/trace&#34; Use Native Tracing Context Carrier The context carrier is used to pass the context between the difference application.
 When creating an Entry Span, you need to obtain the context carrier from the request. When creating an Exit Span, you need to write the context carrier into the target RPC request.">
 
-<meta itemprop="wordCount" content="648">
+<meta itemprop="wordCount" content="716">
 
 
 
@@ -573,7 +573,7 @@ When creating an Entry Span, you need to obtain the context carrier from the req
   })()
 </script>
 
-                  <div class="commit-id">Commit Id: 7544822</div>
+                  <div class="commit-id">Commit Id: b52ef57</div>
                 
 
 
@@ -656,7 +656,18 @@ Add the toolkit/trace dependency to your project.</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">spanRef, err <span style="color:#000;font-weight:bold">:=</span> trace.<span style="color:#900;font-weight:bold">CreateExitSpan</span>(<span style="color:#d14">&#34;operationName&#34;</span>, <span style="color:#d14">&#34;peer&#34;</span>, ExtractorRef)
 </code></pre></div><p>Use <code>trace.StopSpan()</code> API to stop current span</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">trace.<span style="color:#900;font-weight:bold">StopSpan</span>()
-</code></pre></div><h3 id="add-spans-tag-and-log">Add Span’s Tag and Log</h3>
+</code></pre></div><p>When the application retains the returned <code>SpanRef</code>, use <code>SpanRef.End()</code> to
+finish that exact span and <code>SpanRef.SetOperationName()</code> to rename it:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">spanRef, err <span style="color:#000;font-weight:bold">:=</span> trace.<span style="color:#900;font-weight:bold">CreateLocalSpan</span>(<span style="color:#d14">&#34;originalName&#34;</span>)
+<span style="color:#000;font-weight:bold">if</span> err <span style="color:#000;font-weight:bold">==</span> <span style="color:#000;font-weight:bold">nil</span> {
+    spanRef.<span style="color:#900;font-weight:bold">SetOperationName</span>(<span style="color:#d14">&#34;operationName&#34;</span>)
+    spanRef.<span style="color:#900;font-weight:bold">End</span>()
+}
+</code></pre></div><p><code>SpanRef.End()</code> must be called from the goroutine that created the span and in
+LIFO order. For cross-goroutine work, use the asynchronous lifecycle described
+below. <code>trace.StopSpan()</code> remains available for applications that manage spans
+through the current tracing context.</p>
+<h3 id="add-spans-tag-and-log">Add Span’s Tag and Log</h3>
 <p>Use <code>trace.AddLog()</code> to record log in span.</p>
 <p>Use <code>trace.SetTag()</code> to add tag to span, the parameters of tag are two String which are key and value respectively.</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">trace.<span style="color:#900;font-weight:bold">AddLog</span>(<span style="color:#000;font-weight:bold">...</span><span style="color:#458;font-weight:bold">string</span>)
