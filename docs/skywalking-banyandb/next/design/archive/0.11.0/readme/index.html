@@ -29,28 +29,22 @@
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
 
-<title>Watchdog And Flight Recorder Development Design | Apache SkyWalking</title><meta property="og:title" content="Watchdog And Flight Recorder Development Design" />
-<meta property="og:description" content="Watchdog And Flight Recorder Development Design Table of Contents  Overview Component Design Data Flow Testing Strategy Appendix  Overview The First Occurrence Data Collection (FODC) infrastructure consists of two main components working together to ensure metrics data survivability in BanyanDB:
-Watchdog: Periodically polls metrics from the BanyanDB container and forwards them to the Flight Recorder for buffering.
-Flight Recorder: Buffers metrics data using fixed-size circular buffers (RingBuffer) with in-memory storage, ensuring data persists even when the main BanyanDB process crashes." />
+<title>0.11.0 Design Documents | Apache SkyWalking</title><meta property="og:title" content="0.11.0 Design Documents" />
+<meta property="og:description" content="0.11.0 Design Documents  Storage-node post-trace pipeline Trace fragment sampling guard Trace-pipeline merge optimization plan Trace-pipeline merge performance test Trace drop-set bounding plan Trace drop-set bounding  " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/docs/skywalking-banyandb/next/design/fodc/watchdog-and-flight-recoder/" />
+<meta property="og:url" content="/docs/skywalking-banyandb/next/design/archive/0.11.0/readme/" />
 
-<meta itemprop="name" content="Watchdog And Flight Recorder Development Design">
-<meta itemprop="description" content="Watchdog And Flight Recorder Development Design Table of Contents  Overview Component Design Data Flow Testing Strategy Appendix  Overview The First Occurrence Data Collection (FODC) infrastructure consists of two main components working together to ensure metrics data survivability in BanyanDB:
-Watchdog: Periodically polls metrics from the BanyanDB container and forwards them to the Flight Recorder for buffering.
-Flight Recorder: Buffers metrics data using fixed-size circular buffers (RingBuffer) with in-memory storage, ensuring data persists even when the main BanyanDB process crashes.">
+<meta itemprop="name" content="0.11.0 Design Documents">
+<meta itemprop="description" content="0.11.0 Design Documents  Storage-node post-trace pipeline Trace fragment sampling guard Trace-pipeline merge optimization plan Trace-pipeline merge performance test Trace drop-set bounding plan Trace drop-set bounding  ">
 
-<meta itemprop="wordCount" content="2576">
+<meta itemprop="wordCount" content="25">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Watchdog And Flight Recorder Development Design"/>
-<meta name="twitter:description" content="Watchdog And Flight Recorder Development Design Table of Contents  Overview Component Design Data Flow Testing Strategy Appendix  Overview The First Occurrence Data Collection (FODC) infrastructure consists of two main components working together to ensure metrics data survivability in BanyanDB:
-Watchdog: Periodically polls metrics from the BanyanDB container and forwards them to the Flight Recorder for buffering.
-Flight Recorder: Buffers metrics data using fixed-size circular buffers (RingBuffer) with in-memory storage, ensuring data persists even when the main BanyanDB process crashes."/>
+<meta name="twitter:title" content="0.11.0 Design Documents"/>
+<meta name="twitter:description" content="0.11.0 Design Documents  Storage-node post-trace pipeline Trace fragment sampling guard Trace-pipeline merge optimization plan Trace-pipeline merge performance test Trace drop-set bounding plan Trace drop-set bounding  "/>
 
 
 
@@ -68,7 +62,7 @@ Flight Recorder: Buffers metrics data using fixed-size circular buffers (RingBuf
 
 
 
-    <title>Watchdog And Flight Recorder Development Design | Apache SkyWalking</title>
+    <title>0.11.0 Design Documents | Apache SkyWalking</title>
   </head>
   <body class="td-page  project-doc">
     <header>
@@ -1365,7 +1359,7 @@ Flight Recorder: Buffers metrics data using fixed-size circular buffers (RingBuf
   })()
 </script>
 
-                  <div class="commit-id">Commit Id: 3b83e18</div>
+                  <div class="commit-id">Commit Id: e7bb0d3</div>
                 
 
 
@@ -1389,610 +1383,16 @@ Flight Recorder: Buffers metrics data using fixed-size circular buffers (RingBuf
 
 
 
-	<h1 id="watchdog-and-flight-recorder-development-design">Watchdog And Flight Recorder Development Design</h1>
-<h2 id="table-of-contents">Table of Contents</h2>
-<ol>
-<li><a href="#overview">Overview</a></li>
-<li><a href="#component-design">Component Design</a></li>
-<li><a href="#data-flow">Data Flow</a></li>
-<li><a href="#testing-strategy">Testing Strategy</a></li>
-<li><a href="#appendix">Appendix</a></li>
-</ol>
-<h2 id="overview">Overview</h2>
-<p>The First Occurrence Data Collection (FODC) infrastructure consists of two main components working together to ensure metrics data survivability in BanyanDB:</p>
-<p><strong>Watchdog</strong>: Periodically polls metrics from the BanyanDB container and forwards them to the Flight Recorder for buffering.</p>
-<p><strong>Flight Recorder</strong>: Buffers metrics data using fixed-size circular buffers (RingBuffer) with in-memory storage, ensuring data persists even when the main BanyanDB process crashes.</p>
-<p>Together, these components capture and preserve metrics data to ensure that critical observability data is not lost during process crashes.</p>
-<h3 id="responsibilities">Responsibilities</h3>
-<p><strong>Watchdog Component</strong></p>
+	<h1 id="0110-design-documents">0.11.0 Design Documents</h1>
 <ul>
-<li>Polls metrics from BanyanDB at configurable intervals</li>
-<li>Parses Prometheus text format metrics efficiently</li>
-<li>Forwards collected metrics to Flight Recorder for buffering</li>
-<li>Handles connection failures and retries gracefully</li>
-<li>Monitors BanyanDB process health</li>
+<li><a href="../post-trace-pipeline">Storage-node post-trace pipeline</a></li>
+<li><a href="../trace-fragment-sampling-guard">Trace fragment sampling guard</a></li>
+<li><a href="../trace-pipeline-merge-optimization-plan">Trace-pipeline merge optimization plan</a></li>
+<li><a href="../trace-pipeline-merge-performance-test">Trace-pipeline merge performance test</a></li>
+<li><a href="../trace-drop-set-bounding-plan">Trace drop-set bounding plan</a></li>
+<li><a href="../trace-drop-set-bounding">Trace drop-set bounding</a></li>
 </ul>
-<p><strong>Flight Recorder Component</strong></p>
-<ul>
-<li>Maintains a fixed-size circular buffer (RingBuffer) per metric in the <code>metrics</code> map</li>
-<li>Uses a shared <code>timestamps</code> RingBuffer to store timestamps for each polling cycle</li>
-<li>Stores metric descriptions in the <code>descriptions</code> map, keyed by metric name+labels</li>
-<li>Stores metrics in-memory to ensure fast access and persistence across process crashes</li>
-<li>Manages buffer capacity and handles overflow scenarios using circular overwrite behavior</li>
-<li>Tracks write positions using <code>next</code>, <code>count</code>, and <code>n</code> fields for circular buffer management</li>
-<li>Ensures data integrity and prevents data loss during crashes</li>
-</ul>
-<h3 id="component-interaction-flow">Component Interaction Flow</h3>
-<pre><code>BanyanDB Metrics Endpoint
-         │
-         │ (HTTP GET /metrics)
-         ▼
-    Watchdog Component
-         │
-         │ (Poll at interval)
-         │
-         │ Parse Prometheus Format
-         │
-         │ Forward Metrics
-         ▼
-    Flight Recorder Component
-         │
-         │ Write to RingBuffer
-         │
-         │ (Per-metric buffers)
-         ▼
-    In-Memory Storage (Datasources)
-         │
-         │ (Read metrics)
-         ▼
-    Prometheus Metrics Exporter
-         │
-         │ (Collect via prometheus.Collector)
-         │
-         │ Convert to Prometheus Format
-         ▼
-    Prometheus Registry
-         │
-         │ (HTTP GET /metrics)
-         ▼
-    Prometheus Scraper
-</code></pre><h2 id="component-design">Component Design</h2>
-<h3 id="1-watchdog-component">1. Watchdog Component</h3>
-<p><strong>Purpose</strong>: Periodically polls metrics from BanyanDB and forwards them to Flight Recorder</p>
-<h4 id="core-responsibilities">Core Responsibilities</h4>
-<ul>
-<li><strong>Metrics Polling</strong>: Polls metrics from BanyanDB metrics endpoint at configurable intervals</li>
-<li><strong>Metrics Parsing</strong>: Uses metrics package to parse Prometheus text format efficiently</li>
-<li><strong>Error Handling</strong>: Implements exponential backoff for transient failures</li>
-<li><strong>Health Monitoring</strong>: Tracks BanyanDB process health and reports status</li>
-</ul>
-<h4 id="core-types">Core Types</h4>
-<p><strong><code>Watchdog</code></strong></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#000;font-weight:bold">type</span> Watchdog <span style="color:#000;font-weight:bold">struct</span> {
-	client       <span style="color:#000;font-weight:bold">*</span>http.Client
-	url          <span style="color:#458;font-weight:bold">string</span>
-	interval     time.Duration
-}
-</code></pre></div><h4 id="key-functions">Key Functions</h4>
-<p><strong><code>Start(ctx context.Context) error</code></strong></p>
-<ul>
-<li>Initializes the watchdog component</li>
-<li>Starts polling loop with configurable interval</li>
-<li>Sets up HTTP client with connection reuse</li>
-<li>Begins periodic metrics collection</li>
-</ul>
-<p><strong><code>Stop(ctx context.Context) error</code></strong></p>
-<ul>
-<li>Gracefully stops the polling loop</li>
-<li>Closes HTTP connections</li>
-<li>Ensures in-flight requests complete</li>
-</ul>
-<p><strong><code>pollMetrics(ctx context.Context) ([]metrics.RawMetric, error)</code></strong></p>
-<ul>
-<li>Fetches raw metrics text from endpoint</li>
-<li>Uses metrics package to parse Prometheus text format</li>
-<li>Returns parsed metrics or error</li>
-<li>Implements retry logic with exponential backoff</li>
-</ul>
-<h4 id="configuration-flags">Configuration Flags</h4>
-<p><strong><code>--poll-metrics-interval</code></strong></p>
-<ul>
-<li><strong>Type</strong>: <code>duration</code></li>
-<li><strong>Default</strong>: <code>10s</code></li>
-<li><strong>Description</strong>: Interval at which the Watchdog polls metrics from the BanyanDB container</li>
-</ul>
-<p><strong><code>--metrics-endpoint</code></strong></p>
-<ul>
-<li><strong>Type</strong>: <code>string</code></li>
-<li><strong>Default</strong>: <code>http://localhost:2121/metrics</code></li>
-<li><strong>Description</strong>: URL of the BanyanDB metrics endpoint to poll from</li>
-</ul>
-<p><strong><code>--max-metrics-memory-usage-percentage</code></strong></p>
-<ul>
-<li><strong>Type</strong>: <code>int</code></li>
-<li><strong>Default</strong>: <code>10</code></li>
-<li><strong>Description</strong>: Maximum percentage of available memory (based on cgroup memory limit) that can be used for storing metrics in the Flight Recorder. The memory limit is obtained from the container&rsquo;s cgroup configuration (see <code>pkg/cgroups/memory.go</code>). When metrics memory usage exceeds this percentage, the Flight Recorder will stop accepting new metrics or evict older data. Valid range: 0-100.</li>
-</ul>
-<h3 id="2-flight-recorder-component">2. Flight Recorder Component</h3>
-<p><strong>Purpose</strong>: Buffers metrics data using fixed-size circular buffers with in-memory storage</p>
-<h4 id="core-responsibilities-1">Core Responsibilities</h4>
-<ul>
-<li><strong>Metrics Buffering</strong>: Maintains a fixed-size RingBuffer per metric</li>
-<li><strong>Data Persistence</strong>: Ensures metrics survive process crashes</li>
-<li><strong>Overflow Handling</strong>: Implements circular overwrite behavior when buffers are full</li>
-</ul>
-<h4 id="core-types-1">Core Types</h4>
-<p><strong><code>RingBuffer[T]</code></strong> (Generic Ring Buffer)</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#000;font-weight:bold">type</span> RingBuffer[T any] <span style="color:#000;font-weight:bold">struct</span> {
-   next   <span style="color:#458;font-weight:bold">int</span>         <span style="color:#998;font-style:italic">// Next write position in the circular buffer
-</span><span style="color:#998;font-style:italic"></span>   values []T         <span style="color:#998;font-style:italic">// Fixed-size buffer for values of type T
-</span><span style="color:#998;font-style:italic"></span>}
 
-<span style="color:#998;font-style:italic">// NewRingBuffer creates a new RingBuffer.
-</span><span style="color:#998;font-style:italic"></span><span style="color:#000;font-weight:bold">func</span> NewRingBuffer[T any](..<span style="color:#000;font-weight:bold">/</span>) <span style="color:#000;font-weight:bold">*</span>RingBuffer[T]
-
-<span style="color:#998;font-style:italic">// Add adds a value to the ring buffer.
-</span><span style="color:#998;font-style:italic"></span><span style="color:#000;font-weight:bold">func</span> (rb <span style="color:#000;font-weight:bold">*</span>RingBuffer[T]) <span style="color:#900;font-weight:bold">Add</span>(v T)
-</code></pre></div><ul>
-<li>Stores values of any type T in a circular buffer</li>
-<li>Implements circular overwrite behavior when buffer is full</li>
-<li>Provides type-safe operations for both float64 and int64 values</li>
-</ul>
-<p><strong><code>MetricRingBuffer</code></strong></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#000;font-weight:bold">type</span> MetricRingBuffer = RingBuffer[<span style="color:#458;font-weight:bold">float64</span>]
-
-<span style="color:#998;font-style:italic">// NewMetricRingBuffer creates a new MetricRingBuffer.
-</span><span style="color:#998;font-style:italic"></span><span style="color:#000;font-weight:bold">func</span> <span style="color:#900;font-weight:bold">NewMetricRingBuffer</span>() <span style="color:#000;font-weight:bold">*</span>MetricRingBuffer
-</code></pre></div><p><strong><code>TimestampRingBuffer</code></strong></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#000;font-weight:bold">type</span> TimestampRingBuffer = RingBuffer[<span style="color:#458;font-weight:bold">int64</span>]
-
-<span style="color:#998;font-style:italic">// NewTimestampRingBuffer creates a new TimestampRingBuffer.
-</span><span style="color:#998;font-style:italic"></span><span style="color:#000;font-weight:bold">func</span> <span style="color:#900;font-weight:bold">NewTimestampRingBuffer</span>() <span style="color:#000;font-weight:bold">*</span>TimestampRingBuffer
-</code></pre></div><ul>
-<li>Type alias for RingBuffer[int64] for storing timestamps</li>
-<li>Stores timestamps in a circular buffer</li>
-<li>Implements circular overwrite behavior when buffer is full</li>
-</ul>
-<p><strong><code>FlightRecorder</code></strong></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#000;font-weight:bold">type</span> Datasource <span style="color:#000;font-weight:bold">struct</span> {
-   metrics        <span style="color:#000;font-weight:bold">map</span>[<span style="color:#458;font-weight:bold">string</span>]<span style="color:#000;font-weight:bold">*</span>MetricRingBuffer <span style="color:#998;font-style:italic">// Map from metric name+labels to RingBuffer storing metric values
-</span><span style="color:#998;font-style:italic"></span>   timestamps     TimestampRingBuffer          <span style="color:#998;font-style:italic">// RingBuffer storing timestamps for each polling cycle
-</span><span style="color:#998;font-style:italic"></span>   descriptions   <span style="color:#000;font-weight:bold">map</span>[<span style="color:#458;font-weight:bold">string</span>]<span style="color:#458;font-weight:bold">string</span>            <span style="color:#998;font-style:italic">// Map from metric name to HELP content descriptions
-</span><span style="color:#998;font-style:italic"></span>   Capacity       <span style="color:#458;font-weight:bold">int</span>                          <span style="color:#998;font-style:italic">// Number of writable metrics length
-</span><span style="color:#998;font-style:italic"></span>   TotalWritten   <span style="color:#458;font-weight:bold">uint64</span>                       <span style="color:#998;font-style:italic">// Total number of values written (wraps around)
-</span><span style="color:#998;font-style:italic"></span>}
-<span style="color:#000;font-weight:bold">type</span> FlightRecorder <span style="color:#000;font-weight:bold">struct</span> {
-	Datasources   []<span style="color:#000;font-weight:bold">*</span>Datasource
-	CapacitySize  <span style="color:#458;font-weight:bold">int</span>                           <span style="color:#998;font-style:italic">// memory limit
-</span><span style="color:#998;font-style:italic"></span>}
-</code></pre></div><h4 id="key-functions-1">Key Functions</h4>
-<p><strong><code>RingBuffer[T].Add(v T, capacity int)</code></strong></p>
-<ul>
-<li>Generic method that adds a value of type T to the ring buffer</li>
-<li>Implements circular overwrite behavior when buffers are full, compare the capacity with  current MetricRingBuffer capacity, and manage the buffer with FIFO based on the next write position</li>
-<li>Updates the next write position</li>
-<li>Works for both <code>RingBuffer[float64]</code> and <code>RingBuffer[int64]</code></li>
-</ul>
-<p><strong><code>MetricRingBuffer.Update(v float64, capacity int)</code></strong></p>
-<ul>
-<li>Adds a metric value to the metric ring buffer</li>
-<li>Updates the embedded RingBuffer[float64]</li>
-</ul>
-<p><strong><code>TimestampRingBuffer.Update(v int64, capacity int)</code></strong></p>
-<ul>
-<li>Adds a timestamp value to the timestamp ring buffer</li>
-<li>Uses the generic RingBuffer[int64].Add() method</li>
-</ul>
-<p><strong><code>Datasource.Update(m *metric.RawMetric)</code></strong></p>
-<ul>
-<li>Sorts labels for consistent key generation</li>
-<li>Creates MetricKey string from metric name and labels (e.g., &ldquo;http_requests{method=&quot;get&quot;}&quot;)</li>
-<li>Update Datasource.MetricBuffers with MetricKey. Please don&rsquo;t add any values</li>
-<li>Get the total count of each RingBuffer based on the capacity of the Datasource.MetricBuffers and the memory limitation</li>
-<li>Create or update the RingBuffer’s total count. Remove data using FIFO strategy if its original size exceeds the new total count</li>
-<li>Uses MetricRingBuffer.Update() method to add values</li>
-</ul>
-<p><strong><code>Datasource.ComputeCapacity(capacitySize int) int</code></strong></p>
-<ul>
-<li>Computes the maximum capacity (number of entries) for ring buffers based on available memory constraints</li>
-<li>Takes <code>capacitySize</code> (in bytes) as the total memory limit available for this Datasource</li>
-<li>Returns the maximum number of entries that can be stored in each RingBuffer while staying within memory limits</li>
-<li>Calculates capacity by accounting for all memory overheads and solving for the maximum number of entries</li>
-</ul>
-<p><strong>Calculation Steps:</strong></p>
-<ol>
-<li>
-<p><strong>Fixed Overheads</strong> (independent of capacity):</p>
-<ul>
-<li>Metrics Map Overhead: Base map structure overhead (~48 bytes) + per-entry overhead (~16 bytes per metric key)</li>
-<li>Descriptions Map Overhead: Base map structure overhead (~48 bytes) + per-entry overhead (~24 bytes per description)</li>
-<li>String Storage: Sum of all metric key strings and description strings (16 bytes string header + actual string length for each)</li>
-<li>RingBuffer Internal Structures: For each RingBuffer (metrics + timestamps), account for:
-<ul>
-<li><code>next</code> field (int = 8 bytes on 64-bit systems)</li>
-<li>Slice header (24 bytes: pointer + length + capacity)</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p><strong>Variable Costs</strong> (per capacity entry):</p>
-<ul>
-<li>Float64 Values: <code>numMetrics * 8 bytes</code> (one float64 per metric RingBuffer)</li>
-<li>Timestamp RingBuffer: <code>8 bytes</code> (one int64 per entry)</li>
-<li>Total bytes per entry: <code>(numMetrics * 8) + 8</code></li>
-</ul>
-</li>
-<li>
-<p><strong>Capacity Calculation</strong>:</p>
-<pre><code>Available Memory = capacitySize - Fixed Overheads
-Max Capacity = Available Memory / Bytes Per Entry
-</code></pre></li>
-<li>
-<p><strong>Edge Cases</strong>:</p>
-<ul>
-<li>If <code>capacitySize &lt;= 0</code>, return 0</li>
-<li>If no metrics exist yet (<code>len(metrics) == 0</code>), return a default capacity (e.g., 1000)</li>
-<li>If fixed overheads exceed <code>capacitySize</code>, return 0</li>
-<li>Ensure the result is non-negative</li>
-</ul>
-</li>
-</ol>
-<h3 id="3-metrics-package-fodcinternalmetrics">3. Metrics Package (<code>fodc/internal/metrics</code>)</h3>
-<p><strong>Purpose</strong>: Parsing Prometheus text format metrics into structured Go types</p>
-<h4 id="core-types-2">Core Types</h4>
-<p><strong><code>Label</code></strong></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#000;font-weight:bold">type</span> Label <span style="color:#000;font-weight:bold">struct</span> {
-	Name  <span style="color:#458;font-weight:bold">string</span>
-	Value <span style="color:#458;font-weight:bold">string</span>
-}
-</code></pre></div><p><strong><code>RawMetric</code></strong></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#000;font-weight:bold">type</span> RawMetric <span style="color:#000;font-weight:bold">struct</span> {
-   Name        <span style="color:#458;font-weight:bold">string</span>      <span style="color:#998;font-style:italic">// Metric name
-</span><span style="color:#998;font-style:italic"></span>   Labels      []Label     <span style="color:#998;font-style:italic">// Metric labels as key-value pairs
-</span><span style="color:#998;font-style:italic"></span>   Value       <span style="color:#458;font-weight:bold">float64</span>     <span style="color:#998;font-style:italic">// Metric value
-</span><span style="color:#998;font-style:italic"></span>   Desc        <span style="color:#458;font-weight:bold">string</span>      <span style="color:#998;font-style:italic">// HELP text description if available
-</span><span style="color:#998;font-style:italic"></span>}
-</code></pre></div><p><strong><code>MetricKey</code></strong></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#000;font-weight:bold">type</span> MetricKey <span style="color:#000;font-weight:bold">struct</span> {
-   Name   <span style="color:#458;font-weight:bold">string</span>
-   Labels []Label
-}
-
-<span style="color:#000;font-weight:bold">func</span> (mk MetricKey) <span style="color:#900;font-weight:bold">String</span>() <span style="color:#458;font-weight:bold">string</span>
-</code></pre></div><ul>
-<li>Used for uniquely identifying metrics in FlightRecorder</li>
-<li>Labels are sorted for consistent key generation</li>
-<li>String() method generates a canonical representation</li>
-</ul>
-<h4 id="key-functions-2">Key Functions</h4>
-<p><strong><code>Parse(text string) ([]RawMetric, error)</code></strong></p>
-<ul>
-<li>Parses Prometheus text format metrics</li>
-<li>Handles HELP and TYPE lines</li>
-<li>Parses metric lines with labels and values</li>
-<li>Handles comments and empty lines</li>
-<li>Returns structured RawMetric objects or error</li>
-</ul>
-<h3 id="4-prometheus-metrics-exporter-component-fodcinternalexporter">4. Prometheus Metrics Exporter Component (<code>fodc/internal/exporter</code>)</h3>
-<p><strong>Purpose</strong>: Exposes Datasource metrics from FlightRecorder to Prometheus using the <code>prometheus/client_golang</code> library</p>
-<h4 id="core-responsibilities-2">Core Responsibilities</h4>
-<ul>
-<li><strong>Metrics Export</strong>: Implements Prometheus Collector interface to expose Datasource metrics</li>
-<li><strong>Metrics Conversion</strong>: Converts internal Datasource metrics format to Prometheus metric format</li>
-<li><strong>Registry Integration</strong>: Registers with Prometheus registry for metrics scraping</li>
-<li><strong>Label Handling</strong>: Preserves metric labels and descriptions when exporting</li>
-</ul>
-<h4 id="core-types-3">Core Types</h4>
-<p><strong><code>DatasourceCollector</code></strong></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#000;font-weight:bold">type</span> DatasourceCollector <span style="color:#000;font-weight:bold">struct</span> {
-	flightRecorder <span style="color:#000;font-weight:bold">*</span>FlightRecorder
-	descs          <span style="color:#000;font-weight:bold">map</span>[<span style="color:#458;font-weight:bold">string</span>]<span style="color:#000;font-weight:bold">*</span>prometheus.Desc
-	mu             sync.RWMutex
-}
-</code></pre></div><ul>
-<li>Implements <code>prometheus.Collector</code> interface</li>
-<li>Holds reference to FlightRecorder for accessing Datasource metrics</li>
-<li>Caches Prometheus metric descriptors for performance</li>
-<li>Thread-safe access to FlightRecorder data</li>
-</ul>
-<h4 id="key-functions-3">Key Functions</h4>
-<p><strong><code>NewDatasourceCollector(fr *FlightRecorder) *DatasourceCollector</code></strong></p>
-<ul>
-<li>Creates a new DatasourceCollector instance</li>
-<li>Initializes the descriptor cache map</li>
-<li>Returns initialized collector ready for registration</li>
-</ul>
-<p><strong><code>Describe(ch chan&lt;- *prometheus.Desc)</code></strong></p>
-<ul>
-<li>Implements <code>prometheus.Collector</code> interface</li>
-<li>Sends metric descriptors to the channel for Prometheus registry</li>
-<li>Describes all metrics that will be exposed from Datasources</li>
-<li>Creates descriptors dynamically based on metrics stored in Datasources</li>
-<li>Uses metric name and labels to generate unique descriptor keys</li>
-<li>Includes HELP text from Datasource descriptions map</li>
-</ul>
-<p><strong><code>Collect(ch chan&lt;- prometheus.Metric)</code></strong></p>
-<ul>
-<li>Implements <code>prometheus.Collector</code> interface</li>
-<li>Iterates through all Datasources in FlightRecorder</li>
-<li>For each Datasource:
-<ul>
-<li>Iterates through all metrics in the <code>metrics</code> map</li>
-<li>Extracts metric values from RingBuffers</li>
-<li>Creates Prometheus Gauge metrics with current values</li>
-<li>Preserves original metric labels from MetricKey</li>
-<li>Includes timestamps from TimestampRingBuffer when available</li>
-</ul>
-</li>
-<li>Sends Prometheus metrics to the channel</li>
-<li>Handles concurrent access safely using mutex</li>
-</ul>
-<p><strong><code>DatasourceCollector.registerMetricDesc(name string, labels []string, help string) *prometheus.Desc</code></strong></p>
-<ul>
-<li>Creates or retrieves cached Prometheus descriptor for a metric</li>
-<li>Uses metric name and sorted labels as cache key</li>
-<li>Returns Prometheus descriptor for metric registration</li>
-<li>Reuses descriptors to minimize memory allocation</li>
-</ul>
-<h4 id="integration-with-observability-service">Integration with Observability Service</h4>
-<p>The DatasourceCollector integrates with the existing observability service (<code>banyand/observability</code>) to expose metrics:</p>
-<p><strong>Registration Flow</strong>:</p>
-<pre><code>1. FlightRecorder instance created
-   ↓
-2. DatasourceCollector created with FlightRecorder reference
-   ↓
-3. Collector registered with Prometheus registry
-   (promReg.MustRegister(dataSourceCollector))
-   ↓
-4. Metrics endpoint handler exposes metrics
-   (registerMetricsEndpoint(promReg, metricsMux))
-   ↓
-5. Prometheus scrapes /metrics endpoint
-   ↓
-6. DatasourceCollector.Collect() called
-   ↓
-7. Metrics from Datasources exposed in Prometheus format
-</code></pre><p><strong>Metric Format</strong>:</p>
-<ul>
-<li>Metrics are exposed as Prometheus Gauge metrics</li>
-<li>Original metric names are preserved</li>
-<li>Labels from MetricKey are converted to Prometheus label format</li>
-<li>HELP text from descriptions map is included</li>
-<li>Current values from RingBuffers are exported</li>
-</ul>
-<p><strong>Example Exported Metrics</strong>:</p>
-<pre><code># HELP banyandb_stream_tst_inverted_index_total_doc_count Total document count
-# TYPE banyandb_stream_tst_inverted_index_total_doc_count gauge
-banyandb_stream_tst_inverted_index_total_doc_count{index=&quot;test&quot;} 12345
-</code></pre><h4 id="dependencies">Dependencies</h4>
-<ul>
-<li><strong><code>github.com/prometheus/client_golang/prometheus</code></strong>: Core Prometheus client library</li>
-<li><strong>FlightRecorder</strong>: Source of Datasource metrics data</li>
-<li><strong>Thread Safety</strong>: Uses mutex for concurrent access protection</li>
-</ul>
-<h4 id="configuration">Configuration</h4>
-<p>The exporter component uses the existing Prometheus configuration from the observability service:</p>
-<ul>
-<li><strong>Metrics Endpoint</strong>: <code>/metrics</code> (default)</li>
-<li><strong>Listen Address</strong>: Configured via <code>--observability-listener-addr</code> flag</li>
-<li><strong>Prometheus Mode</strong>: Enabled via <code>--observability-modes=prometheus</code> flag</li>
-</ul>
-<h2 id="data-flow">Data Flow</h2>
-<h3 id="metrics-collection-flow">Metrics Collection Flow</h3>
-<pre><code>1. Watchdog Polling Timer Triggers
-   ↓
-2. HTTP GET Request to Metrics Endpoint
-   (http://localhost:2121/metrics)
-   ↓
-3. Read Response Body (Prometheus Text Format)
-   ↓
-4. Parse Metrics Using metrics.Parse()
-   - Parse HELP lines for descriptions
-   - Parse metric lines with labels and values
-   ↓
-5. Convert to RawMetric Structures
-   ↓
-6. Forward to Flight Recorder
-   ↓
-7. Flight Recorder.Update() Called
-   ↓
-8. For Each Metric:
-   a. Create MetricKey from metric name and sorted labels (e.g., &quot;http_requests{method=\&quot;get\&quot;}&quot;)
-   b. Ensure the RingBuffer[float64] exists in Datasource.metrics for the MetricKey
-     - If it doesn't exist, create a new RingBuffer[float64] (do not add values yet)
-   c. Calculate the target capacity for each RingBuffer based on:
-     - The capacity of Datasource.metrics map
-     - Available memory limitations
-   d. Adjust RingBuffer capacity if needed:
-     - If the RingBuffer's current size exceeds the new target capacity, remove oldest data using FIFO (First-In-First-Out) strategy
-     - Update the RingBuffer's capacity to match the target capacity
-   e. Add the metric value to the RingBuffer in Datasource.metrics
-   f. Store the metric description in Datasource.descriptions map using the MetricKey
-   g. Add timestamp to Datasource.timestamps RingBuffer (once per polling cycle, not per metric)
-   ↓
-9. Metrics Buffered in Memory via FlightRecorder
-</code></pre><h3 id="metrics-export-flow">Metrics Export Flow</h3>
-<pre><code>1. Prometheus Scraper Requests Metrics
-   (HTTP GET /metrics endpoint)
-   ↓
-2. Prometheus HTTP Handler Invoked
-   (promhttp.HandlerFor with registry)
-   ↓
-3. Prometheus Registry Calls Collectors
-   ↓
-4. DatasourceCollector.Collect() Called
-   ↓
-5. For Each Datasource in FlightRecorder:
-   a. Acquire read lock on FlightRecorder
-   b. Iterate through Datasource.metrics map
-   c. For each MetricKey and RingBuffer:
-      - Extract current metric value from RingBuffer
-      - Retrieve metric description from Datasource.descriptions
-      - Parse MetricKey to extract metric name and labels
-      - Create Prometheus Gauge metric with:
-        * Metric name (from MetricKey)
-        * Labels (from MetricKey labels)
-        * Current value (from RingBuffer)
-        * HELP text (from descriptions map)
-   d. Send Prometheus metrics to channel
-   ↓
-6. Prometheus Registry Aggregates Metrics
-   ↓
-7. Metrics Exposed in Prometheus Text Format
-   ↓
-8. Prometheus Scraper Receives Metrics
-</code></pre><h2 id="testing-strategy">Testing Strategy</h2>
-<h3 id="unit-testing">Unit Testing</h3>
-<p><strong>Metrics Package</strong></p>
-<ul>
-<li>Test <code>Parse()</code> with various Prometheus formats</li>
-<li>Test HELP line parsing</li>
-<li>Test label parsing (quoted values, special characters)</li>
-<li>Test edge cases (empty labels, invalid formats, comments)</li>
-<li>Test performance with large metrics outputs</li>
-</ul>
-<p><strong>Flight Recorder Package</strong></p>
-<ul>
-<li>Test RingBuffer[T].Add() write operations for both float64 and int64 types</li>
-<li>Test MetricRingBuffer.Update()</li>
-<li>Test TimestampRingBuffer.Update() operations</li>
-<li>Test FlightRecorder.Update() with new and existing metrics</li>
-<li>Test circular overwrite behavior</li>
-<li>Test histogram storage and retrieval</li>
-<li>Test concurrent writes</li>
-<li>Test error handling</li>
-<li>Test generic RingBuffer[T] type safety</li>
-</ul>
-<p><strong>Watchdog Package</strong></p>
-<ul>
-<li>Test polling interval accuracy</li>
-<li>Test HTTP client connection reuse</li>
-<li>Test exponential backoff retry logic</li>
-<li>Test error handling for connection failures</li>
-<li>Test metrics forwarding to Flight Recorder</li>
-</ul>
-<p><strong>Prometheus Metrics Exporter Package</strong></p>
-<ul>
-<li>Test <code>DatasourceCollector.Describe()</code> method
-<ul>
-<li>Verify all metric descriptors are described correctly</li>
-<li>Test descriptor caching behavior</li>
-<li>Test with empty FlightRecorder</li>
-<li>Test with multiple Datasources</li>
-</ul>
-</li>
-<li>Test <code>DatasourceCollector.Collect()</code> method
-<ul>
-<li>Verify metrics are collected from all Datasources</li>
-<li>Test label preservation from MetricKey</li>
-<li>Test HELP text inclusion from descriptions map</li>
-<li>Test metric value extraction from RingBuffers</li>
-<li>Test concurrent access safety</li>
-<li>Test with empty RingBuffers</li>
-<li>Test with multiple metrics per Datasource</li>
-</ul>
-</li>
-<li>Test Prometheus registry integration
-<ul>
-<li>Verify collector registration</li>
-<li>Test metrics exposure via HTTP endpoint</li>
-<li>Verify Prometheus text format compliance</li>
-</ul>
-</li>
-<li>Test error handling
-<ul>
-<li>Test with nil FlightRecorder</li>
-<li>Test with corrupted metric data</li>
-<li>Test with invalid label values</li>
-</ul>
-</li>
-</ul>
-<h3 id="e2e-testing">E2E Testing</h3>
-<p><strong>Test Case 1: Basic Metrics Buffering</strong></p>
-<ul>
-<li>Start BanyanDB</li>
-<li>Generate metrics by performing operations</li>
-<li>Wait for Watchdog to poll metrics</li>
-<li>Verify metrics are buffered correctly through internal checks</li>
-</ul>
-<p><strong>Test Case 2: Buffer Overflow Handling</strong></p>
-<ul>
-<li>Start BanyanDB</li>
-<li>Generate large number of metric values (exceeding buffer size)</li>
-<li>Verify circular overwrite behavior</li>
-<li>Verify newest metrics are preserved</li>
-<li>Verify oldest metrics are overwritten correctly</li>
-</ul>
-<p><strong>Test Case 3: Metrics Export to Prometheus</strong></p>
-<ul>
-<li>Start BanyanDB with Prometheus mode enabled</li>
-<li>Generate metrics and wait for Watchdog to collect them</li>
-<li>Verify metrics are stored in FlightRecorder Datasources</li>
-<li>Scrape <code>/metrics</code> endpoint using Prometheus client</li>
-<li>Verify exported metrics match buffered metrics</li>
-<li>Verify metric labels are preserved correctly</li>
-<li>Verify HELP text is included in exported metrics</li>
-<li>Verify metric values are current (from RingBuffers)</li>
-<li>Test concurrent scraping while metrics are being updated</li>
-</ul>
-<h2 id="appendix">Appendix</h2>
-<h3 id="code-organization">Code Organization</h3>
-<p><strong>Package Structure</strong></p>
-<pre><code>fodc/
-  internal/
-    metrics/      - Prometheus metrics parsing
-    watchdog/     - Watchdog component
-    flightrecorder/ - Flight Recorder component
-banyand/
-  observability/ - Integration with observability service
-  liaison/
-    http/        - HTTP API endpoints
-</code></pre><h3 id="integration-points">Integration Points</h3>
-<p><strong>Existing Components</strong></p>
-<ul>
-<li><strong>Observability Service</strong>: Integrates with <code>banyand/observability</code> package</li>
-<li><strong>HTTP Server</strong>: Uses existing HTTP server infrastructure from <code>banyand/liaison/http</code></li>
-<li><strong>Flag Management</strong>: Uses existing flag system from <code>pkg/run</code></li>
-<li><strong>Logging</strong>: Uses existing logging infrastructure from <code>pkg/logger</code></li>
-</ul>
-<p><strong>Dependencies</strong></p>
-<ul>
-<li>Standard library: <code>net/http</code>, <code>context</code>, <code>time</code>, <code>fmt</code>, etc.</li>
-<li>Minimal external dependencies</li>
-<li>Prefer standard library when possible</li>
-</ul>
-<h3 id="prometheus-text-format-reference">Prometheus Text Format Reference</h3>
-<p><strong>Format</strong>: <code>metric_name{label1=&quot;value1&quot;, label2=&quot;value2&quot;} value</code></p>
-<p><strong>Example</strong>:</p>
-<pre><code># HELP banyandb_stream_tst_inverted_index_total_doc_count Total document count
-# TYPE banyandb_stream_tst_inverted_index_total_doc_count gauge
-banyandb_stream_tst_inverted_index_total_doc_count{index=&quot;test&quot;} 12345
-cpu_usage{host=&quot;server1&quot;} 75.5
-</code></pre><p><strong>Histogram Format</strong>:</p>
-<pre><code># HELP http_request_duration_seconds Request duration histogram
-# TYPE http_request_duration_seconds histogram
-http_request_duration_seconds_bucket{le=&quot;0.1&quot;} 100
-http_request_duration_seconds_bucket{le=&quot;0.5&quot;} 200
-http_request_duration_seconds_bucket{le=&quot;+Inf&quot;} 300
-http_request_duration_seconds_count 300
-http_request_duration_seconds_sum 45.2
-</code></pre><p><strong>Summary Format</strong>:</p>
-<pre><code># HELP http_request_duration_seconds Request duration summary
-# TYPE http_request_duration_seconds summary
-http_request_duration_seconds{quantile=&quot;0.5&quot;} 0.052
-http_request_duration_seconds{quantile=&quot;0.9&quot;} 0.120
-http_request_duration_seconds{quantile=&quot;0.99&quot;} 0.250
-http_request_duration_seconds_sum 45.2
-http_request_duration_seconds_count 300
-</code></pre><p><strong>Counter Format</strong>:</p>
-<pre><code># HELP http_requests_total Total number of HTTP requests
-# TYPE http_requests_total counter
-http_requests_total{method=&quot;GET&quot;,status=&quot;200&quot;} 1234
-http_requests_total{method=&quot;POST&quot;,status=&quot;200&quot;} 567
-http_requests_total{method=&quot;GET&quot;,status=&quot;404&quot;} 89
-http_requests_total{method=&quot;POST&quot;,status=&quot;500&quot;} 12
-</code></pre>
 
 
 
@@ -2024,49 +1424,6 @@ http_requests_total{method=&quot;POST&quot;,status=&quot;500&quot;} 12
 
 
 
-
-<nav id="TableOfContents">
-  <ul>
-    <li><a href="#watchdog-and-flight-recorder-development-design">Watchdog And Flight Recorder Development Design</a>
-      <ul>
-        <li><a href="#table-of-contents">Table of Contents</a></li>
-        <li><a href="#overview">Overview</a>
-          <ul>
-            <li><a href="#responsibilities">Responsibilities</a></li>
-            <li><a href="#component-interaction-flow">Component Interaction Flow</a></li>
-          </ul>
-        </li>
-        <li><a href="#component-design">Component Design</a>
-          <ul>
-            <li><a href="#1-watchdog-component">1. Watchdog Component</a></li>
-            <li><a href="#2-flight-recorder-component">2. Flight Recorder Component</a></li>
-            <li><a href="#3-metrics-package-fodcinternalmetrics">3. Metrics Package (<code>fodc/internal/metrics</code>)</a></li>
-            <li><a href="#4-prometheus-metrics-exporter-component-fodcinternalexporter">4. Prometheus Metrics Exporter Component (<code>fodc/internal/exporter</code>)</a></li>
-          </ul>
-        </li>
-        <li><a href="#data-flow">Data Flow</a>
-          <ul>
-            <li><a href="#metrics-collection-flow">Metrics Collection Flow</a></li>
-            <li><a href="#metrics-export-flow">Metrics Export Flow</a></li>
-          </ul>
-        </li>
-        <li><a href="#testing-strategy">Testing Strategy</a>
-          <ul>
-            <li><a href="#unit-testing">Unit Testing</a></li>
-            <li><a href="#e2e-testing">E2E Testing</a></li>
-          </ul>
-        </li>
-        <li><a href="#appendix">Appendix</a>
-          <ul>
-            <li><a href="#code-organization">Code Organization</a></li>
-            <li><a href="#integration-points">Integration Points</a></li>
-            <li><a href="#prometheus-text-format-reference">Prometheus Text Format Reference</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-  </ul>
-</nav>
 
 
 
@@ -2180,6 +1537,24 @@ http_requests_total{method=&quot;POST&quot;,status=&quot;500&quot;} 12
 
     </div>
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
