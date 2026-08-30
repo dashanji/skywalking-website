@@ -3040,7 +3040,25 @@
   </url>
   
   <url>
+    <loc>/docs/skywalking-swck/next/en/changes/changes-0.1.0/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/docs/skywalking-swck/next/en/changes/changes-0.10.0/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>/docs/skywalking-banyandb/next/design/archive/0.10.0/readme/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/docs/skywalking-swck/next/en/changes/changes/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -3053,6 +3071,60 @@
   
   <url>
     <loc>/docs/skywalking-banyandb/next/design/archive/0.12.0/readme/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/docs/skywalking-swck/next/en/changes/changes-0.2.0/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/docs/skywalking-swck/next/en/changes/changes-0.3.0/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/docs/skywalking-swck/next/en/changes/changes-0.4.0/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/docs/skywalking-swck/next/en/changes/changes-0.5.0/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/docs/skywalking-swck/next/en/changes/changes-0.6.0/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/docs/skywalking-swck/next/en/changes/changes-0.6.1/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/docs/skywalking-swck/next/en/changes/changes-0.7.0/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/docs/skywalking-swck/next/en/changes/changes-0.8.0/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/docs/skywalking-swck/next/en/changes/changes-0.9.0/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -4679,7 +4751,7 @@
   </url>
   
   <url>
-    <loc>/docs/skywalking-swck/next/release/</loc>
+    <loc>/docs/skywalking-swck/next/en/guides/release/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -5418,6 +5490,12 @@
   
   <url>
     <loc>/docs/main/next/en/banyandb/dashboards-banyandb/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/docs/skywalking-swck/next/en/setup/banyandb/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -6745,7 +6823,7 @@
   </url>
   
   <url>
-    <loc>/docs/skywalking-swck/next/custom-metrics-adapter/</loc>
+    <loc>/docs/skywalking-swck/next/en/setup/custom-metrics-adapter/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -7039,7 +7117,7 @@
   </url>
   
   <url>
-    <loc>/docs/skywalking-swck/next/examples/default-backend/</loc>
+    <loc>/docs/skywalking-swck/next/en/examples/default-backend/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -8277,6 +8355,12 @@
   </url>
   
   <url>
+    <loc>/docs/skywalking-swck/next/en/guides/e2e/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>/docs/main/next/en/setup/backend/backend-envoy-ai-gateway-monitoring/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -8632,7 +8716,7 @@
   </url>
   
   <url>
-    <loc>/docs/skywalking-swck/next/examples/istio-controlplane/</loc>
+    <loc>/docs/skywalking-swck/next/en/examples/istio-controlplane/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -9028,7 +9112,7 @@
   </url>
   
   <url>
-    <loc>/docs/skywalking-swck/next/getting-started/</loc>
+    <loc>/docs/skywalking-swck/next/en/setup/getting-started/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -9406,7 +9490,7 @@
   </url>
   
   <url>
-    <loc>/docs/skywalking-swck/next/how-to-add-new-crd-and-controller/</loc>
+    <loc>/docs/skywalking-swck/next/en/guides/how-to-add-new-crd-and-controller/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -10072,6 +10156,12 @@
   </url>
   
   <url>
+    <loc>/docs/skywalking-swck/next/en/setup/helm-chart/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>/docs/skywalking-banyandb/latest/installation/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -10276,7 +10366,7 @@
   </url>
   
   <url>
-    <loc>/docs/skywalking-swck/next/java-agent-injector/</loc>
+    <loc>/docs/skywalking-swck/next/en/setup/java-agent-injector/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -10294,7 +10384,7 @@
   </url>
   
   <url>
-    <loc>/docs/skywalking-swck/next/examples/java-agent-injector-usage/</loc>
+    <loc>/docs/skywalking-swck/next/en/examples/java-agent-injector-usage/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -10342,7 +10432,7 @@
   </url>
   
   <url>
-    <loc>/docs/skywalking-swck/next/javaagent/</loc>
+    <loc>/docs/skywalking-swck/next/en/setup/javaagent/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -12040,7 +12130,7 @@
   </url>
   
   <url>
-    <loc>/docs/skywalking-swck/next/oapserver-configuration/</loc>
+    <loc>/docs/skywalking-swck/next/en/setup/oapserver-configuration/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -12544,7 +12634,7 @@
   </url>
   
   <url>
-    <loc>/docs/skywalking-swck/next/operator/</loc>
+    <loc>/docs/skywalking-swck/next/en/setup/operator/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -12725,6 +12815,12 @@
   
   <url>
     <loc>/docs/skywalking-satellite/v1.2.0/en/concepts-and-designs/overview/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/docs/skywalking-swck/next/en/concepts-and-designs/overview/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -14836,7 +14932,7 @@
   </url>
   
   <url>
-    <loc>/docs/skywalking-swck/next/examples/satellite/</loc>
+    <loc>/docs/skywalking-swck/next/en/examples/satellite/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -16145,7 +16241,7 @@
   </url>
   
   <url>
-    <loc>/docs/skywalking-swck/next/examples/event-exporter/</loc>
+    <loc>/docs/skywalking-swck/next/en/examples/event-exporter/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -16715,7 +16811,7 @@
   </url>
   
   <url>
-    <loc>/docs/skywalking-swck/next/examples/storage/</loc>
+    <loc>/docs/skywalking-swck/next/en/examples/storage/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -16733,7 +16829,7 @@
   </url>
   
   <url>
-    <loc>/docs/skywalking-swck/next/design/proposal/</loc>
+    <loc>/docs/skywalking-swck/next/en/concepts-and-designs/proposal/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -17370,13 +17466,13 @@
   </url>
   
   <url>
-    <loc>/docs/skywalking-swck/latest/readme/</loc>
+    <loc>/docs/skywalking-swck/next/readme/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/docs/skywalking-swck/next/readme/</loc>
+    <loc>/docs/skywalking-swck/latest/readme/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
