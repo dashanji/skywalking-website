@@ -30,21 +30,21 @@
 <meta name="theme-color" content="#ffffff">
 
 <title>11.1.0 | Apache SkyWalking</title><meta property="og:title" content="11.1.0" />
-<meta property="og:description" content="11.1.0 Project OAP Server  Add customizable LLM-as-judge support for AI evaluation, with OpenAI-compatible endpoint / model / API key configuration, and persist the evaluation result as queryable GenAIEvaluationRecord rows for later inspection. Support hot-reloading the BanyanDB credentials from a new secretsManagementFile setting in bydb.yml (SW_STORAGE_BANYANDB_SECRETS_MANAGEMENT_FILE), matching the ElasticSearch storage plugin. The properties file carrying user/password is watched, so a rotation performed by a 3rd party tool such as Vault is applied without restarting the OAP." />
+<meta property="og:description" content="11.1.0 Project  Replace the GenAI e2e cases&#39; Spring AI application with an in-repo e2e-spring-ai-service module pinned to the released Spring AI 2.0.1, and move the mock LLM endpoints out of e2e-service-provider into a dedicated e2e-mock-llm-server module that all three GenAI cases share. The Spring AI application was previously built at test time by cloning spring-projects/spring-ai-examples and running Maven inside the image build, which resolved spring-ai:2.0.0-SNAPSHOT: a line that has since been abandoned, whose surviving builds all predate the 2." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/docs/main/next/en/changes/changes/" />
 
 <meta itemprop="name" content="11.1.0">
-<meta itemprop="description" content="11.1.0 Project OAP Server  Add customizable LLM-as-judge support for AI evaluation, with OpenAI-compatible endpoint / model / API key configuration, and persist the evaluation result as queryable GenAIEvaluationRecord rows for later inspection. Support hot-reloading the BanyanDB credentials from a new secretsManagementFile setting in bydb.yml (SW_STORAGE_BANYANDB_SECRETS_MANAGEMENT_FILE), matching the ElasticSearch storage plugin. The properties file carrying user/password is watched, so a rotation performed by a 3rd party tool such as Vault is applied without restarting the OAP.">
+<meta itemprop="description" content="11.1.0 Project  Replace the GenAI e2e cases&#39; Spring AI application with an in-repo e2e-spring-ai-service module pinned to the released Spring AI 2.0.1, and move the mock LLM endpoints out of e2e-service-provider into a dedicated e2e-mock-llm-server module that all three GenAI cases share. The Spring AI application was previously built at test time by cloning spring-projects/spring-ai-examples and running Maven inside the image build, which resolved spring-ai:2.0.0-SNAPSHOT: a line that has since been abandoned, whose surviving builds all predate the 2.">
 
-<meta itemprop="wordCount" content="2713">
+<meta itemprop="wordCount" content="2908">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="11.1.0"/>
-<meta name="twitter:description" content="11.1.0 Project OAP Server  Add customizable LLM-as-judge support for AI evaluation, with OpenAI-compatible endpoint / model / API key configuration, and persist the evaluation result as queryable GenAIEvaluationRecord rows for later inspection. Support hot-reloading the BanyanDB credentials from a new secretsManagementFile setting in bydb.yml (SW_STORAGE_BANYANDB_SECRETS_MANAGEMENT_FILE), matching the ElasticSearch storage plugin. The properties file carrying user/password is watched, so a rotation performed by a 3rd party tool such as Vault is applied without restarting the OAP."/>
+<meta name="twitter:description" content="11.1.0 Project  Replace the GenAI e2e cases&#39; Spring AI application with an in-repo e2e-spring-ai-service module pinned to the released Spring AI 2.0.1, and move the mock LLM endpoints out of e2e-service-provider into a dedicated e2e-mock-llm-server module that all three GenAI cases share. The Spring AI application was previously built at test time by cloning spring-projects/spring-ai-examples and running Maven inside the image build, which resolved spring-ai:2.0.0-SNAPSHOT: a line that has since been abandoned, whose surviving builds all predate the 2."/>
 
 
 
@@ -2993,7 +2993,7 @@
   })()
 </script>
 
-                  <div class="commit-id">Commit Id: afddbd6</div>
+                  <div class="commit-id">Commit Id: 25c74a8</div>
                 
 
 
@@ -3054,6 +3054,9 @@
 
 	<h2 id="1110">11.1.0</h2>
 <h4 id="project">Project</h4>
+<ul>
+<li>Replace the GenAI e2e cases' Spring AI application with an in-repo <code>e2e-spring-ai-service</code> module pinned to the released Spring AI 2.0.1, and move the mock LLM endpoints out of <code>e2e-service-provider</code> into a dedicated <code>e2e-mock-llm-server</code> module that all three GenAI cases share. The Spring AI application was previously built at test time by cloning <code>spring-projects/spring-ai-examples</code> and running Maven inside the image build, which resolved <code>spring-ai:2.0.0-SNAPSHOT</code>: a line that has since been abandoned, whose surviving builds all predate the 2.0.0 GA by a day and whose older builds have been pruned, so the fixture was pinned to nothing released and could no longer be rebuilt from the same bytes. Both modules are built by the existing e2e reactor and published to <code>ghcr.io/apache/skywalking</code> alongside the other e2e service images; <code>e2e-spring-ai-service</code> needs Java 17 and Spring Boot 4, so it is gated behind a new <code>jdk-17</code> profile in the e2e reactor and the jobs that build it now pin JDK 17 explicitly; <code>make -C test docker</code> refuses up front on an older JDK rather than packaging a missing or stale jar, since <code>clean</code> never reaches a module the profile excluded and compose would turn the absent jar into a directory.</li>
+</ul>
 <h4 id="oap-server">OAP Server</h4>
 <ul>
 <li>Add customizable LLM-as-judge support for AI evaluation, with OpenAI-compatible endpoint / model / API key configuration, and persist the evaluation result as queryable <code>GenAIEvaluationRecord</code> rows for later inspection.</li>
